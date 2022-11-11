@@ -37,5 +37,83 @@
             "nom": "Prunier",
             "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
         }
+    },
+    {
+        "id": 3,
+        "serial": "sdfds",
+        "nom": "coffee",
+        "description": "pas un jouet",
+        "prix": 3.33,
+        "qte_inventaire": 50,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 4,
+        "serial": "sdfds",
+        "nom": "Monster energy",
+        "description": "pas un jouet",
+        "prix": 4.44,
+        "qte_inventaire": 50,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 5,
+        "serial": "sdfds",
+        "nom": "G-fuel",
+        "description": "pas un jouet",
+        "prix": 5.55,
+        "qte_inventaire": 50,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 6,
+        "serial": "sdfds",
+        "nom": "gamecube controller",
+        "description": "un jouet",
+        "prix": 6.66,
+        "qte_inventaire": 50,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 7,
+        "serial": "sdfds",
+        "nom": "xbox controller",
+        "description": "pas un jouet",
+        "prix": 7.77,
+        "qte_inventaire": 50,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 8,
+        "serial": "sdfds",
+        "nom": "portable",
+        "description": "pas un jouet",
+        "prix": 8.88,
+        "qte_inventaire": 50,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
     }
 ]
