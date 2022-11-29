@@ -100,11 +100,62 @@ class CollectionProduit {
         return elem.qte_inventaire === qteInventaire;
       });
     }
-    if (categorie && categorie.id) {
+    if (categorie) {
       listeLocale = listeLocale.filter(function (elem) {
-        return elem.categorie.id === categorie.id;
+        return elem.categorie.id == categorie;
       });
     }
+    return listeLocale;
+  }
+  
+/*Extension de la méthode de recherche, permettant de définir un maximum et un minimum.
+* TODO : Trouver façon d'utiliser rechercheProduit normal.
+* NOTE : La méthode de recherche par catégorie échoue elle-aussi. Sans doute la même raison 
+*/ 
+  rechercheProduit(serial, nom, description, prix, qteInventaire, categorie, minimum, maximum) {
+
+    let listeLocale = [...this.liste_produits];
+    if (serial) {
+      listeLocale = listeLocale.filter(function (elem) {
+        return elem.serial === serial;
+      });
+    }
+    if (nom) {
+      listeLocale = listeLocale.filter(function (elem) {
+        return elem.nom === nom;
+      });
+    }
+    if (description) {
+      listeLocale = listeLocale.filter(function (elem) {
+        return elem.description.includes(description);
+      });
+    }
+    if (prix) {
+      listeLocale = listeLocale.filter(function (elem) {
+        return elem.prix === prix;
+      });
+    }
+    if (qteInventaire) {
+      listeLocale = listeLocale.filter(function (elem) {
+        return elem.qte_inventaire === qteInventaire;
+      });
+    }
+    if (categorie) {
+      listeLocale = listeLocale.filter(function (elem) {
+        return elem.categorie.id == categorie;
+      });
+    }
+    if(minimum){
+      listeLocale = listeLocale.filter(function(elem){
+        return elem.prix >= minimum;
+      });
+    }
+    if(maximum){
+      listeLocale = listeLocale.filter(function(elem){
+        return elem.prix <= maximum;
+      });
+    }
+
     return listeLocale;
   }
 

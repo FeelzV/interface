@@ -1,26 +1,36 @@
+
 <section id="sectionFiltre" style="float:left;width:20%;">
   <h1>Filtres</h1>
-  <div>
-    <h3>Prix</h3>
-    <label>min</label>
-    <input type="text" />
-    <label>max</label>
-    <input  type="text"/>
-  </div>
-  <div>
-    <h3>Catégorie</h3>
-    <ul>
-      <li><input type="radio" name="categorie"/><label>Catgorie1</label></li>
-      <li><input type="radio" name="categorie"/><label>Catgorie2</label></li>
-    </ul>
-  </div>
+    <div>
+      <h3>Prix</h3>
+      <div>
+        <label>min</label>
+        <input type="text" id="accueilFiltreMin"/>
+      </div>
+      <div>
+        <label>max</label>
+        <input  type="text" id="accueilFiltreMax"/>
+      </div>
+    </div>
+    <div>
+      <h3>Catégorie</h3>
+      <ul id="listeCategorie"><!--Est rempli par JS-->
+        <li>
+          <input type="radio" name="categorie" value="" checked/>
+          <label>Toute catégories</label>
+        </li>
+      </ul>
+    </div>
+    <button type="button" class="btn" onclick="filtrerAccueil()">Filtrer</button>
+
+  
 
 </section>
-<section id="sectionProduits" style="float:right;width:80%;">
+<section id="sectionProduits" style="float:right;width:80%;" class="row"><!--Est rempli par JS-->
 
 </section>
 
-
+<!--<section id="sectionProduits" style="float:right;width:80%;display: flex;flex-direction: row;flex-wrap: wrap-reverse;">-->
 <!-- Carte originale --Garder pour référence
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">

@@ -1,4 +1,5 @@
 .cardAccueil{
     max-width: 540px;
     display: inline-block;
+    flex-grow: 1;
 }
