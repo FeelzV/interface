@@ -231,21 +231,28 @@ form .group select{
 
 .cart_item_container{
     display: flex;
-    background-color: rgba(230,230,230,0.6);
-    border-radius: 4%;
+    background-color: rgba(250,250,250,0.6);
+    border-radius: 2%;
     border: 1px solid rgba(220,220,220,0.8);
-    margin: 0.5rem 0.3rem 0.5rem 0.3rem;
-    max-width: 100%;
-    min-width: fit-content;
+    margin: 0.5rem 0 0.5rem 0;
     height: 5rem;
+    max-width:100%;
     box-sizing: border-box;
-    
 
 }
 
-.list_panier{
+.list_panier_container{
     border: 1px solid rgba(0,0,0,0.8);
     border-radius: 2%;
-    
-    overflow:hidden;
+    padding : 0 0 0 0;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+#list_panier{
+    justify-content: center;
+    display:block;
+    box-sizing: border-box;
+    margin:10px;
+
 }
