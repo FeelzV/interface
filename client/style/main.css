@@ -228,3 +228,24 @@ form .group select{
 .centrer {
     text-align: center;
 }
+
+.cart_item_container{
+    display: flex;
+    background-color: rgba(230,230,230,0.6);
+    border-radius: 4%;
+    border: 1px solid rgba(220,220,220,0.8);
+    margin: 0.5rem 0.3rem 0.5rem 0.3rem;
+    max-width: 100%;
+    min-width: fit-content;
+    height: 5rem;
+    box-sizing: border-box;
+    
+
+}
+
+.list_panier{
+    border: 1px solid rgba(0,0,0,0.8);
+    border-radius: 2%;
+    
+    overflow:hidden;
+}

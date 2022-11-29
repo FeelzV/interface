@@ -92,7 +92,7 @@ function panier_to_html(item){
     item_spacer = $('<div></div>')
     .addClass('col centrer')
     item_row = $('<div></div>')
-    .addClass('row')
+    .addClass('row cart_item_container')
     .append(item_name)
     .append(item_price)
     .append(item_qte)
