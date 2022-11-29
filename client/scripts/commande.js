@@ -28,7 +28,7 @@ function commande_to_html(item){
     item_image=$(`<img class="panier_image">`).attr('src', "images/"+item.nomProduit+".png");
     item_image_container.append(item_image);
     item_desc_container = $('<div class="col centrer contain_height"></div>');
-    item_desc_container.append(`<h4>${item.nomProduit}</h4>`);
+    item_desc_container.append(`<h5>${item.nomProduit}</h5>`);
     item_desc_container.append(`<h6>${item.prix}</h6>`);
     spacer = $('<div class="col centrer contain_height"></div>');
     spacer.append(`<p class="hideoverflow contain_height"> ${item.descriptionProduit} </p>`);

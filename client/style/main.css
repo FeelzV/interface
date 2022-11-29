@@ -353,3 +353,23 @@ body{
 .hideoverflow{
     overflow:hidden;
 }
+
+.halfwidth{
+    width:50%;
+}
+
+.threefourthwidth{
+    width:75%;
+}
+
+.quarterwidth{
+    width:25%;
+}
+
+.thirdwidth{
+    width:33%;
+}
+
+.custom-select{
+    width:auto;
+}
