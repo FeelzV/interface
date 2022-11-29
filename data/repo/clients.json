@@ -9,73 +9,8 @@
         "courriel": "aaa@bbb.com",
         "mdp": "$2b$08$CEfAuisfWI/driqC4REyfOo/y8RG0g1dw7ngClRLBk1QANEs.U53u",
         "panier": {
-            "valeur": 284.25000000000006,
-            "items": [
-                {
-                    "id": 0,
-                    "idProduit": 0,
-                    "nomProduit": "Banane",
-                    "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
-                    "prix": 24.76,
-                    "quantite": 6
-                },
-                {
-                    "id": 1,
-                    "idProduit": 1,
-                    "nomProduit": "Tomate",
-                    "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
-                    "prix": 24.76,
-                    "quantite": 4
-                },
-                {
-                    "id": 2,
-                    "idProduit": 2,
-                    "nomProduit": "concombre",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 2.23,
-                    "quantite": 2
-                },
-                {
-                    "id": 3,
-                    "idProduit": 3,
-                    "nomProduit": "coffee",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 3.33,
-                    "quantite": 2
-                },
-                {
-                    "id": 5,
-                    "idProduit": 6,
-                    "nomProduit": "gamecube controller",
-                    "descriptionProduit": "un jouet",
-                    "prix": 6.66,
-                    "quantite": 1
-                },
-                {
-                    "id": 6,
-                    "idProduit": 5,
-                    "nomProduit": "G-fuel",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 5.55,
-                    "quantite": 1
-                },
-                {
-                    "id": 7,
-                    "idProduit": 4,
-                    "nomProduit": "Monster energy",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 4.44,
-                    "quantite": 1
-                },
-                {
-                    "id": 8,
-                    "idProduit": 8,
-                    "nomProduit": "portable",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 8.88,
-                    "quantite": 1
-                }
-            ]
+            "valeur": 0,
+            "items": []
         },
         "historique": [
             {
@@ -94,6 +29,231 @@
                 ],
                 "status": "reçue",
                 "date": "2021-11-13T21:44:38.858Z"
+            },
+            {
+                "id": -1,
+                "idClient": 1,
+                "montant": 284.25000000000006,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 0,
+                        "nomProduit": "Banane",
+                        "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                        "prix": 24.76,
+                        "quantite": 6
+                    },
+                    {
+                        "id": 1,
+                        "idProduit": 1,
+                        "nomProduit": "Tomate",
+                        "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                        "prix": 24.76,
+                        "quantite": 4
+                    },
+                    {
+                        "id": 2,
+                        "idProduit": 2,
+                        "nomProduit": "concombre",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 2.23,
+                        "quantite": 2
+                    },
+                    {
+                        "id": 3,
+                        "idProduit": 3,
+                        "nomProduit": "coffee",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 3.33,
+                        "quantite": 2
+                    },
+                    {
+                        "id": 5,
+                        "idProduit": 6,
+                        "nomProduit": "gamecube controller",
+                        "descriptionProduit": "un jouet",
+                        "prix": 6.66,
+                        "quantite": 1
+                    },
+                    {
+                        "id": 6,
+                        "idProduit": 5,
+                        "nomProduit": "G-fuel",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 5.55,
+                        "quantite": 1
+                    },
+                    {
+                        "id": 7,
+                        "idProduit": 4,
+                        "nomProduit": "Monster energy",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 4.44,
+                        "quantite": 1
+                    },
+                    {
+                        "id": 8,
+                        "idProduit": 8,
+                        "nomProduit": "portable",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 8.88,
+                        "quantite": 1
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-11-29T15:17:26.901Z"
+            },
+            {
+                "id": 7,
+                "idClient": 1,
+                "montant": 51.75,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 2,
+                        "nomProduit": "concombre",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 2.23,
+                        "quantite": 1
+                    },
+                    {
+                        "id": 1,
+                        "idProduit": 1,
+                        "nomProduit": "Tomate",
+                        "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                        "prix": 24.76,
+                        "quantite": 1
+                    },
+                    {
+                        "id": 2,
+                        "idProduit": 0,
+                        "nomProduit": "Banane",
+                        "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                        "prix": 24.76,
+                        "quantite": 1
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-11-29T16:56:39.344Z"
+            },
+            {
+                "id": 8,
+                "idClient": 1,
+                "montant": 24.76,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 1,
+                        "nomProduit": "Tomate",
+                        "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                        "prix": 24.76,
+                        "quantite": 1
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-11-29T17:00:05.426Z"
+            },
+            {
+                "id": 9,
+                "idClient": 1,
+                "montant": 2.23,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 2,
+                        "nomProduit": "concombre",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 2.23,
+                        "quantite": 1
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-11-29T17:02:07.255Z"
+            },
+            {
+                "id": -1,
+                "idClient": 1,
+                "montant": 2.23,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 2,
+                        "nomProduit": "concombre",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 2.23,
+                        "quantite": 1
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-11-29T17:03:10.576Z"
+            },
+            {
+                "id": 11,
+                "idClient": 1,
+                "montant": 2.23,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 2,
+                        "nomProduit": "concombre",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 2.23,
+                        "quantite": 1
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-11-29T17:05:09.722Z"
+            },
+            {
+                "id": 12,
+                "idClient": 1,
+                "montant": 2.23,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 2,
+                        "nomProduit": "concombre",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 2.23,
+                        "quantite": 1
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-11-29T17:08:23.206Z"
+            },
+            {
+                "id": 13,
+                "idClient": 1,
+                "montant": 2.23,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 2,
+                        "nomProduit": "concombre",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 2.23,
+                        "quantite": 1
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-11-29T17:10:06.212Z"
+            },
+            {
+                "id": -1,
+                "idClient": 1,
+                "montant": 2.23,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 2,
+                        "nomProduit": "concombre",
+                        "descriptionProduit": "pas un jouet",
+                        "prix": 2.23,
+                        "quantite": 1
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-11-29T17:11:17.337Z"
             }
         ]
     },

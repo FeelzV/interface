@@ -240,6 +240,7 @@ form .group select{
     height: 5rem;
     max-width:100%;
     box-sizing: border-box;
+    padding: 0.5rem 0 0.5rem 0;
 
 }
 
@@ -321,10 +322,13 @@ form .group select{
     align-items: center;
     font-size: large;
     margin:auto;
+    max-height:100%;
+
 }
 
 .currentqtt{
     border:1px solid rgba(100,100,100,0.8);
+
 }
 
 .retirer{
@@ -372,4 +376,13 @@ body{
 
 .custom-select{
     width:auto;
+}
+
+.graytext{
+    color:rgba(150, 150, 150, 0.733);
+    font-size:0.7rem;
+}
+
+.noMargin{
+    margin:0;
 }
