@@ -2,6 +2,13 @@
 # Created by https://www.toptal.com/developers/gitignore/api/webstorm,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=webstorm,node
 
+##Manually Excluded Content
+package.json
+packageCopy.json
+package-lock.json
+
+
+####Auto-Generated Content####
 ### Node ###
 # Logs
 logs
