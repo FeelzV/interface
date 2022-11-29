@@ -59,7 +59,7 @@ function add_item(id_item){
 };
 
 function chargerpanier(){
-    //$('#list_panier').text('');
+    $('#list_panier').text('');
     ID_CLIENT = 1
     TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
     $.ajax({
@@ -70,7 +70,12 @@ function chargerpanier(){
         },
         success: function( result ){
             for(let i in result.items){
-                $('#list_panier').append(panier_to_html(result.items[i]))
+                if (result.items[i].quantite <= 0){
+                    retirer_item(result.items[i].id)
+                }
+                else{
+                    $('#list_panier').append(panier_to_html(result.items[i]))
+                }
             }
             $('#sous_total_text').text(`Sous-total (${result.items.length} items) :`);
             $('#sous_total').text(result.valeur.toFixed(2));
@@ -82,7 +87,6 @@ function chargerpanier(){
 }
 
 function panier_to_html(item){
-    console.log(item)
     container = $('<div class="row cart_item_container"></div>');
     item_image_container = $('<div class="col centrer contain_height"></div>');
     item_image=$(`<img class="panier_image">`).attr('src', "images/"+item.nomProduit+".png");
@@ -90,8 +94,8 @@ function panier_to_html(item){
     item_desc_container = $('<div class="col centrer"></div>');
     item_desc_container.append(`<h4>${item.nomProduit}</h4>`);
     item_desc_container.append(`<h6>${item.prix}</h6>`);
-    spacer = $('<div class="col centrer"></div>');
-    spacer.append(`<p> ${item.descriptionProduit} </p>`);
+    spacer = $('<div class="col centrer contain_height"></div>');
+    spacer.append(`<p class="contain_height"> ${item.descriptionProduit} </p>`);
 
     item_qtt_container=$('<div class="col centrer contain_height"></div>');
 
@@ -99,19 +103,19 @@ function panier_to_html(item){
 
     item_qtt_controller = $('<div class="qtt_control_container centrer"></div>');
     minus_container = $('<div class="qtt_control minus"></div>');
-    minus_button = $(`<button type="button" class="btn btn-outline-danger qtt_button qtt">-</button>`).attr('onclick', `update_qtt(${item.idProduit}, -1)`);
+    minus_button = $(`<button type="button" class="btn btn-outline-danger qtt_button qtt">-</button>`).attr('onclick', `update_qtt(${item.id}, -1)`);
     minus_container.append(minus_button);
     minus_container.append(minus_button)
     qtt_container = $('<div class="qtt_control currentqtt"></div>');
     qtt_container.append(`<h6 class="qtt">${item.quantite}</h6>`)
     plus_container = $('<div class="qtt_control plus"></div>');
-    plus_button = $(`<button type="button" class="btn btn-outline-success qtt_button qtt">+</button>`).attr('onclick', `update_qtt(${item.idProduit}, 1)`);
+    plus_button = $(`<button type="button" class="btn btn-outline-success qtt_button qtt">+</button>`).attr('onclick', `update_qtt(${item.id}, 1)`);
     plus_container.append(plus_button);
 
     item_qtt_controller.append(minus_container).append(qtt_container).append(plus_container);
 
     item_retirer_button_container = $('<div class="row"></div>');
-    item_retirer_button = $(`<button type="button" class="btn btn-outline-danger retirer" onclick="retirer_item(${item.idProduit})">retirer</button>`)
+    item_retirer_button = $(`<button type="button" class="btn btn-outline-danger retirer" onclick="retirer_item(${item.id})">retirer</button>`)
     item_retirer_button_container.append(item_retirer_button);
 
     
@@ -123,9 +127,31 @@ function panier_to_html(item){
 
 
 function retirer_item(itemid){
-
+    ID_CLIENT = 1
+    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
+    $.ajax({
+        url: "/clients/"+ID_CLIENT+"/panier/"+itemid,
+        method:"DELETE",
+        beforeSend: function (xhr){
+            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+        },
+        success: chargerpanier
+    });
 }
 
 function update_qtt(itemid, qtt){
-
+    ID_CLIENT = 1
+    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
+    
+    
+    $.ajax({
+        url: "/clients/"+ID_CLIENT+"/panier/"+itemid,
+        method:"PUT",
+        data: JSON.stringify({"quantite": qtt}),
+        contentType: "application/json",
+        beforeSend: function (xhr){
+            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+        },
+        success: chargerpanier
+    });
 }

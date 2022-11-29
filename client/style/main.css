@@ -266,6 +266,11 @@ form .group select{
     margin-left: auto;
 }
 
+.payment_info{
+    width: 60%;
+    margin-left: auto;
+}
+
 .right-content{
     text-align: right;
 }
@@ -343,4 +348,8 @@ form .group select{
 
 body{
     background-color: rgba(225,225,225,0.6);
+}
+
+.hideoverflow{
+    overflow:hidden;
 }

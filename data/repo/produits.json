@@ -5,7 +5,7 @@
         "nom": "Banane",
         "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
         "prix": 24.76,
-        "qte_inventaire": 154,
+        "qte_inventaire": 158,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
@@ -18,7 +18,7 @@
         "nom": "Tomate",
         "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
         "prix": 24.76,
-        "qte_inventaire": 40,
+        "qte_inventaire": 37,
         "categorie": {
             "id": 2,
             "nom": "Banane",
@@ -57,7 +57,7 @@
         "nom": "Monster energy",
         "description": "pas un jouet",
         "prix": 4.44,
-        "qte_inventaire": 50,
+        "qte_inventaire": 49,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
@@ -70,7 +70,7 @@
         "nom": "G-fuel",
         "description": "pas un jouet",
         "prix": 5.55,
-        "qte_inventaire": 50,
+        "qte_inventaire": 49,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
@@ -109,7 +109,7 @@
         "nom": "portable",
         "description": "pas un jouet",
         "prix": 8.88,
-        "qte_inventaire": 50,
+        "qte_inventaire": 49,
         "categorie": {
             "id": 1,
             "nom": "Prunier",

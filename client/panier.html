@@ -2,38 +2,6 @@
     <div class="list_panier_container">
         <!-- Affichage de la liste du panier-->
         <div class="row" id="list_panier">
-            <div class="row cart_item_container">
-                <div class="col centrer contain_height">
-                    <img src="images/logo.png" class="panier_image">
-                </div>
-                <div class="col centrer">
-                    <h4>Banane</h4>
-                    <h6>24.76$</h6>
-                </div>
-                <div class="col centrer">
-                </div>
-                <div class="col centrer">
-                </div>
-                <div class="col centrer contain_height">
-                    <div class="row">
-                        <h6>Quantité</h6>
-                    </div>
-                    <div class="qtt_control_container centrer">
-                        <div class="qtt_control minus">
-                            <button type="button" class="btn btn-outline-danger qtt_button qtt">-</button>
-                        </div>
-                        <div class="qtt_control currentqtt">
-                            <h6 class="qtt">0</h6>
-                        </div>
-                        <div class="qtt_control plus">
-                            <button type="button" class="btn btn-outline-success qtt_button qtt">+</button>
-                        </div> 
-                    </div>
-                    <div class="row">
-                        <button type="button" class="btn btn-outline-danger retirer">retirer</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <div class="payment_info">
@@ -76,10 +44,10 @@
     </div>
     <div>
         <div class="col">
-            <button onclick="window.location.replace('#/produit')" type="button" class="btn btn-outline-warning" id="accueil">Revenir aux produits</button>
+            <button onclick="window.location.href = '#/produit'" type="button" class="btn btn-outline-warning" id="accueil">Revenir aux produits</button>
         </div>
         <div class="col right-content">
-            <button onclick="window.location.replace('#/commande')" type="button" class="btn btn-warning" id="commander">Passer à la commande</button>
+            <button onclick="window.location.href = '#/commande'" type="button" class="btn btn-warning" id="commander">Passer à la commande</button>
         </div>
     </div>
 </section>

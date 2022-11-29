@@ -9,7 +9,7 @@
         "courriel": "aaa@bbb.com",
         "mdp": "$2b$08$CEfAuisfWI/driqC4REyfOo/y8RG0g1dw7ngClRLBk1QANEs.U53u",
         "panier": {
-            "valeur": 292.35,
+            "valeur": 286.46000000000004,
             "items": [
                 {
                     "id": 0,
@@ -17,7 +17,7 @@
                     "nomProduit": "Banane",
                     "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
                     "prix": 24.76,
-                    "quantite": 10
+                    "quantite": 6
                 },
                 {
                     "id": 1,
@@ -25,7 +25,7 @@
                     "nomProduit": "Tomate",
                     "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
                     "prix": 24.76,
-                    "quantite": 1
+                    "quantite": 4
                 },
                 {
                     "id": 2,
@@ -57,6 +57,30 @@
                     "nomProduit": "gamecube controller",
                     "descriptionProduit": "un jouet",
                     "prix": 6.66,
+                    "quantite": 1
+                },
+                {
+                    "id": 6,
+                    "idProduit": 5,
+                    "nomProduit": "G-fuel",
+                    "descriptionProduit": "pas un jouet",
+                    "prix": 5.55,
+                    "quantite": 1
+                },
+                {
+                    "id": 7,
+                    "idProduit": 4,
+                    "nomProduit": "Monster energy",
+                    "descriptionProduit": "pas un jouet",
+                    "prix": 4.44,
+                    "quantite": 1
+                },
+                {
+                    "id": 8,
+                    "idProduit": 8,
+                    "nomProduit": "portable",
+                    "descriptionProduit": "pas un jouet",
+                    "prix": 8.88,
                     "quantite": 1
                 }
             ]
