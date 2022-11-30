@@ -1,7 +1,5 @@
 function chargercommande(){
     $('#list_panier').text('');
-    ID_CLIENT = 1
-    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
     $.ajax({
         url: "/clients/"+ID_CLIENT+"/panier",
         method:"GET",
@@ -58,8 +56,10 @@ function commande(){
             xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
         },
         success: function( result ){
-            window.location.href = "#/confirmation";
+            console.log(result)
             populerConfirmation(result);
+            window.location.href = "#/confirmation";
+            
         },
         error: function( result ){
             console.log(result);

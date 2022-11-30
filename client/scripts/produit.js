@@ -43,8 +43,6 @@ $(function () {
 });
 
 function add_item(id_item){
-    ID_CLIENT = 1
-    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
     $.ajax({
         url: "/clients/"+ID_CLIENT+"/panier",
         method:"POST",
@@ -60,8 +58,6 @@ function add_item(id_item){
 
 function chargerpanier(){
     $('#list_panier').text('');
-    ID_CLIENT = 1
-    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
     $.ajax({
         url: "/clients/"+ID_CLIENT+"/panier",
         method:"GET",

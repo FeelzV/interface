@@ -260,7 +260,7 @@ form .group select{
     margin:10px;
     max-width: 100%;
     max-height:30rem;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .payment_info{
     width: 30%;
@@ -301,6 +301,7 @@ form .group select{
 
 .contain_height{
     height:100%;
+    overflow:hidden;
 }
 
 .qtt_button{
@@ -385,4 +386,23 @@ body{
 
 .noMargin{
     margin:0;
+}
+
+.confirmation{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2%;
+    background-color: gold;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.container{
+    background-color:white;
+}
+
+.info_commande_container{
+    color: rgba(100,100,100,0.8);
+    padding: 0.5rem 1rem 0.5rem 1rem;
 }
