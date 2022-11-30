@@ -36,6 +36,7 @@ class GestionClient {
     // Il faudrait vérifier que la pays est valide et que l'adresse existe. Une autre fois peut-être
     const duplicata = this.collectionClient.recupereClientParCourriel(req.body.courriel);
     if (duplicata) {
+      console.log("marche pas")
       res.status(400).send('Il y a déjà un client avec cette adresse');
       return;
     }
