@@ -5,3 +5,10 @@
     margin: 5px;
     box-shadow: 5px 5px 10px black;
 }
+.cardAccueil:hover{
+    transform: scale(1.05);
+    transition: 1s ease-in-out;
+}
+.stars{
+    color:orange;
+}

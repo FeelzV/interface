@@ -52,18 +52,33 @@ function itemToCard(item){
     let itemContaine = $("<div></div>").addClass("card mb-3 cardAccueil col-lg-4 col-md-6 col-sm-12");
     let itemRow = $("<div></div>").addClass("row g-0");
     let imageCol = $("<div></div>").addClass("col-md-4")
-                    .append("<img src=\"images/logo.png\" class=\"img-fluid rounded-start\" alt=\"...\">");
+                    .append("<img src=\"images/"+item.nom+".png\" class=\"img-fluid rounded-start\" alt=\"...\">");
     let contentCol = $("<div></div>").addClass("col-md-8");
     let contentBody = $("<div></div>").addClass("card-body")
                         .append("<h5 class=\"card-title\">"+item.nom+"</h5>"+
                         "<p class=\"card-text\">"+item.description+"</p>"+
-                        "<span class=\"card-text\">&starf;&starf;&starf;&star;&star;</span>"+
+                        makeStars()+
                         "<span>"+item.prix+"$</span>");
     
     contentCol.append(contentBody);
     itemRow.append(imageCol).append(contentCol);
     itemContaine.append(itemRow);
     return itemContaine;
+}
+
+function makeStars(){
+    let numberOfStar = Math.random() *5;
+    let starText = "<span class=\"card-text stars\">"
+    //Mettre étoiles remplies
+    for(let i =0; i< numberOfStar;i++){
+        starText += "&starf;";
+    }
+    //Mettre étoiles vides
+    for(let i =0; i< 4-numberOfStar;i++){
+        starText += "&star;";
+    }
+    starText += "</span>";
+    return starText;
 }
 
 function chargerCategoriesAccueil(){
