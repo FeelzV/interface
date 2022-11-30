@@ -1,17 +1,51 @@
-<h1 id="para-1" class="centrer">Bienvenu chez Pro-Gramme</h1>
-<section id="menu-gauche">
-  <a href="#para-1" onclick="clicMenuGauche(this)">Premier paragraphe</a>
-  <a href="#para-2" onclick="clicMenuGauche(this)">Second paragraphe</a>
-  <a href="#para-3" onclick="clicMenuGauche(this)">Troisième paragraphe</a>
+
+<section id="sectionFiltre" style="float:left;width:20%;">
+  <h1>Filtres</h1>
+    <div>
+      <h3>Prix</h3>
+      <div>
+        <label for="accueilFiltreMin" class="form-label">Minimum</label>
+        <input type="text" class="form-control" id="accueilFiltreMin"/>
+      </div>
+      <div>
+        <label class="form-label" for="accueilFiltreMax">Maximum</label>
+        <input  type="text" id="accueilFiltreMax" class="form-control"/>
+      </div>
+    </div>
+    <div>
+      <h3>Catégorie</h3>
+      <ul id="listeCategorie"><!--Est rempli par JS-->
+        <li>
+          <input id="radioCategorie" type="radio" name="categorie" value="" class="form-check-input" checked/>
+          <label for="radioCategorie" class="form-check-label">Toute catégories</label>
+        </li>
+      </ul>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="filtrerAccueil()">Filtrer</button>
+
+  
+
 </section>
-<section id="texte-acceuil">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi distinctio, doloremque ex facere fugit illo? Amet asperiores dicta earum eveniet, hic impedit libero nisi, nulla qui quia recusandae voluptate voluptatum.</p>
-  <h2 id="para-2">Sous titre du paragraphe 2</h2>
-  <p><img src="images/supp.png" alt="Image de suppléments"/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur corporis eos ipsum iure nostrum quis reprehenderit veritatis voluptas voluptate. Blanditiis ea enim itaque labore soluta, tempore temporibus tenetur voluptatibus? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores fugit laboriosam modi necessitatibus praesentium quia rem sed suscipit unde. Aut beatae error eum laboriosam minima quas quia similique veritatis.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aliquid, distinctio, explicabo illum labore laudantium maxime modi molestias obcaecati quis rem suscipit voluptate. Dolorum mollitia perspiciatis quae temporibus voluptatem.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aliquid, distinctio, explicabo illum labore laudantium maxime modi molestias obcaecati quis rem suscipit voluptate. Dolorum mollitia perspiciatis quae temporibus voluptatem.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aliquid, distinctio, explicabo illum labore laudantium maxime modi molestias obcaecati quis rem suscipit voluptate. Dolorum mollitia perspiciatis quae temporibus voluptatem.</p>
-  <h2 id="para-3">Sous-titre du paragraphe 3</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aliquid, distinctio, explicabo illum labore laudantium maxime modi molestias obcaecati quis rem suscipit voluptate. Dolorum mollitia perspiciatis quae temporibus voluptatem.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aliquid, distinctio, explicabo illum labore laudantium maxime modi molestias obcaecati quis rem suscipit voluptate. Dolorum mollitia perspiciatis quae temporibus voluptatem.</p>
+<section id="sectionProduits" style="float:right;width:80%;" class="row"><!--Est rempli par JS-->
+
 </section>
+
+<!--<section id="sectionProduits" style="float:right;width:80%;display: flex;flex-direction: row;flex-wrap: wrap-reverse;">-->
+<!-- Carte originale --Garder pour référence
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="images/logo.png" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <span class="card-text">&starf;&starf;&starf;&star;&star;</span>
+          <span>89,99$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+-->
