@@ -1,21 +1,11 @@
+
 $(document).ready(function(){
-    chargerProduitAccueil();
+    filtrerAccueil();
     chargerCategoriesAccueil();
 });
 
-function chargerProduitAccueil(){
-    $('#sectionProduits').text("");
-    $.ajax({
-    url: "/produits",
-    success: function( result ) {
-        $.each(result, function(key,value){
-            item = itemToCard(value)
-            $('#sectionProduits').append(item)
-        })
-    }
-});
-}
 function filtrerAccueil(){
+
     $('#sectionProduits').text("");
     let data = {};//Faire un objet data dynamiquement
     let minimum = $("#accueilFiltreMin").val();
@@ -101,6 +91,11 @@ function categoryToListItem(item){
 //onChange=\"chargerProduitAccueilParCategorie("+item.id+")\"
 
 function searchBar(){
-    $(window).attr('location','http://localhost:3000/#/');
+    window.location.replace('/#/');
     filtrerAccueil();
+}
+
+function retourAccueil(){
+    $(window).attr('location','/#/');
+    window.location.reload();
 }
