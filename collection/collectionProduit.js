@@ -122,7 +122,7 @@ class CollectionProduit {
     }
     if (nom) {
       listeLocale = listeLocale.filter(function (elem) {
-        return elem.nom === nom;
+        return elem.nom.includes(nom);
       });
     }
     if (description) {

@@ -17,18 +17,22 @@ function chargerProduitAccueil(){
 }
 function filtrerAccueil(){
     $('#sectionProduits').text("");
-    let data = {};
+    let data = {};//Faire un objet data dynamiquement
     let minimum = $("#accueilFiltreMin").val();
     if(minimum){
-        data.minimum = minimum;
+        data.minimum = parseInt(minimum);
     }
     let maximum = $("#accueilFiltreMax").val();
     if(maximum){
-        data.maximum = maximum
+        data.maximum = parseInt(maximum);
     }
     let categorie = $('input:radio[name=categorie]:checked').val();
     if(categorie){
         data.categorie = parseInt(categorie);
+    }
+    let nom = $('#searchBar').val();
+    if(nom){
+        data.nom = nom;
     }
     $.ajax({
     url: "/produits",
@@ -75,9 +79,13 @@ function chargerCategoriesAccueil(){
 }
 
 function categoryToListItem(item){
-    let listeItem = $("<li></li>").append("<input type=\"radio\" name=\"categorie\" value="+item.id+"/>"
-                                            +"<label>"+item.nom+"</label>");
+    let listeItem = $("<li></li>").append("<input type=\"radio\" name=\"categorie\" value="+item.id+" class=\"form-check-input\" id=\"radio"+item.id+"\"/>"
+                                            +"<label class=\"form-check-label\" for=\"radio"+item.id+"\">"+item.nom+"</label>");
     return listeItem;
 }
 //onChange=\"chargerProduitAccueilParCategorie("+item.id+")\"
 
+function searchBar(){
+    $(window).attr('location','http://localhost:3000/#/');
+    filtrerAccueil();
+}
