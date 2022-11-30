@@ -1,23 +1,54 @@
-<section class="mt-2 container">
-    <div class="row">
-        <div class="col centrer">
-            <h3>Nom</h3>
+<section class="mt-3 container mainbody">
+    <div class="list_panier_container">
+        <!-- Affichage de la liste du panier-->
+        <div class="row" id="list_panier">
         </div>
-        <div class="col centrer">
-            <h3>Prix</h3>
+    </div>
+    <div class="payment_info">
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h5 id="sous_total_text">Sous-total:</h5>
+            </div>
+            <div class="col right-content">
+                <h5 id="sous_total">0</h5>
+            </div>
         </div>
-        <div class="col centrer">
-            <h3>Qte</h3>
+        <div class="row">
+            <div class="col">
+                <h5>Livraison:</h5>
+            </div>
+            <div class="col right-content">
+                <h5 id="livraison">0</h5>
+            </div>
         </div>
-        <div class="col centrer">
-            <h3>Sous-total</h3>
+        <div class="row">
+            <div class="col">
+                <h5>Taxes:</h5>
+            </div>
+            <div class="col right-content">
+                <h5 id="taxes">0</h5>
+            </div>
         </div>
-        <div class="col centrer">
-            <h3 id="prixTotal">Total : 0</h3>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h5>Total:</h5>
+            </div>
+            <div class="col right-content">
+                <h5 id="total">0</h5>
+            </div>
         </div>
 
+
     </div>
-    <!-- Affichage de la liste du panier-->
-    <div class="row" id="list_panier">
+    <br>
+    <div class="row">
+        <div class="col">
+            <button onclick="window.location.href = '#/produit'" type="button" class="btn btn-outline-warning" id="accueil">Revenir aux produits</button>
+        </div>
+        <div class="col right-content">
+            <button onclick="window.location.href = '#/commande'" type="button" class="btn btn-warning" id="commander">Passer à la commande</button>
+        </div>
     </div>
 </section>

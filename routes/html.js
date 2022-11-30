@@ -28,5 +28,10 @@ router.get('/produit', function(req, res){
 router.get('/panier', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/panier.html'));
     });
-    
+router.get('/commande', function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/commande.html'));
+    });
+router.get('/confirmation', function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/confirmation.html'));
+    });
 module.exports = router
