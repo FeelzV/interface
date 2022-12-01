@@ -3,117 +3,94 @@
         "id": 0,
         "serial": "we23545",
         "nom": "Banane",
-        "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
-        "prix": 24.76,
-        "qte_inventaire": 155,
+
+        "description": "miam",
+        "prix": 2.35,
+        "qte_inventaire": 154,
         "categorie": {
             "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "nom": "nourriture",
+            "description": "Eat"
         }
     },
     {
         "id": 1,
-        "serial": "we23545",
-        "nom": "Tomate",
-        "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
-        "prix": 24.76,
-        "qte_inventaire": 24,
+
+        "serial": "we2354t435",
+        "nom": "Barre protéinée",
+        "description": "yum",
+        "prix": 3.69,
+        "qte_inventaire": 40,
+
         "categorie": {
-            "id": 2,
-            "nom": "Banane",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "id": 1,
+            "nom": "nourriture",
+            "description": "Eat"
         }
     },
     {
         "id": 2,
-        "serial": "sdfds",
+        "serial": "sdfdsfds",
         "nom": "concombre",
-        "description": "pas un jouet",
+        "description": "vert",
         "prix": 2.23,
-        "qte_inventaire": 21,
+        "qte_inventaire": 49,
         "categorie": {
             "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "nom": "nourriture",
+            "description": "Eat"
         }
     },
     {
         "id": 3,
-        "serial": "sdfds",
-        "nom": "coffee",
-        "description": "pas un jouet",
-        "prix": 3.33,
-        "qte_inventaire": 45,
+        "serial": "sdfassadds",
+        "nom": "café",
+        "description": "go fast",
+        "prix": 6.69,
+        "qte_inventaire": 49,
         "categorie": {
-            "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "id": 2,
+            "nom": "suppléments",
+            "description": "Maximiser votre santé"
         }
     },
     {
         "id": 4,
-        "serial": "sdfds",
-        "nom": "Monster energy",
-        "description": "pas un jouet",
+        "serial": "sdfaasssadss",
+        "nom": "Monster",
+        "description": "i am speed",
         "prix": 4.44,
-        "qte_inventaire": 48,
+        "qte_inventaire": 50,
         "categorie": {
-            "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "id": 2,
+            "nom": "suppléments",
+            "description": "Maximiser votre santé"
         }
     },
     {
         "id": 5,
-        "serial": "sdfds",
+        "serial": "sdasdfds",
         "nom": "G-fuel",
-        "description": "pas un jouet",
-        "prix": 5.55,
-        "qte_inventaire": 48,
+        "description": "gaming fuel",
+        "prix": 5.44,
+        "qte_inventaire": 50,
         "categorie": {
-            "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "id": 2,
+            "nom": "suppléments",
+            "description": "Maximiser votre santé"
         }
     },
     {
         "id": 6,
-        "serial": "sdfds",
-        "nom": "gamecube controller",
-        "description": "un jouet",
+        "serial": "sdfddsas",
+        "nom": "Tank top",
+        "description": "Black",
         "prix": 6.66,
-        "qte_inventaire": 48,
-        "categorie": {
-            "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
-        }
-    },
-    {
-        "id": 7,
-        "serial": "sdfds",
-        "nom": "xbox controller",
-        "description": "pas un jouet",
-        "prix": 7.77,
         "qte_inventaire": 49,
         "categorie": {
-            "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
-        }
-    },
-    {
-        "id": 8,
-        "serial": "sdfds",
-        "nom": "portable",
-        "description": "pas un jouet",
-        "prix": 8.88,
-        "qte_inventaire": 48,
-        "categorie": {
-            "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "id": 3,
+            "nom": "vêtements",
+            "description": "Nice drip bro"
         }
     }
 ]

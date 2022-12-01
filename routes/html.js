@@ -17,6 +17,10 @@ router.get('/inscription', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/inscription.html'));
 });
 
+router.get('/connexion', function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/connexion.html'));
+});
+
 router.get('/points_de_vente', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/points_de_vente.html'));
 });
@@ -34,7 +38,13 @@ router.get('/commande', function(req, res){
 router.get('/confirmation', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/confirmation.html'));
     });
+
 router.get('/pageProduit/:idProduit', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/pageProduit.html'));
     });
+=======
+router.get('/:image',function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/' + req.params.image));
+});
+
 module.exports = router

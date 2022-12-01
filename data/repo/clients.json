@@ -673,5 +673,20 @@
             "items": []
         },
         "historique": []
+    },
+    {
+        "id": 3,
+        "prenom": "ok",
+        "nom": "ok",
+        "age": 21,
+        "adresse": "ok",
+        "pays": "ok",
+        "courriel": "abc@abc.abc",
+        "mdp": "$2b$08$jBPnxl5OhE.13/ZWuHbYgOaAI7RpIDemeHeTlo6vG/4KgPggpJv5W",
+        "panier": {
+            "valeur": 0,
+            "items": []
+        },
+        "historique": []
     }
 ]
