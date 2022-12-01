@@ -3,6 +3,7 @@
         "id": 0,
         "serial": "we23545",
         "nom": "Banane",
+
         "description": "miam",
         "prix": 2.35,
         "qte_inventaire": 154,
@@ -14,11 +15,13 @@
     },
     {
         "id": 1,
+
         "serial": "we2354t435",
         "nom": "Barre protéinée",
         "description": "yum",
         "prix": 3.69,
         "qte_inventaire": 40,
+
         "categorie": {
             "id": 1,
             "nom": "nourriture",

@@ -407,3 +407,7 @@ body{
     color: rgba(100,100,100,0.8);
     padding: 0.5rem 1rem 0.5rem 1rem;
 }
+
+#pageProduit{
+    background-color: white;
+}

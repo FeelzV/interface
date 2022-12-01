@@ -4,10 +4,14 @@
     flex-grow: 1;
     margin: 5px;
     box-shadow: 5px 5px 10px black;
+    color: black;
+    text-decoration: none;
 }
+
 .cardAccueil:hover{
     transform: scale(1.05);
     transition: 1s ease-in-out;
+    color: black;
 }
 .stars{
     color:orange;
