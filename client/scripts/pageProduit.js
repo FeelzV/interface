@@ -18,7 +18,7 @@ function getProduitById(id){
 }
 
 function fairePageProduit(item){
-    $('#imageContainerPageProduit').append("<img src=\"images/"+item.nom+"\" class=\"img-fluid rounded-start\" alt=\"Image du produit\">");
+    $('#imageContainerPageProduit').append("<img src=\"images/"+item.nom+".jpg\" class=\"img-fluid rounded-start\" alt=\"Image du produit\">");
     document.getElementById('titrePageProduit').innerText = item.nom;
     document.getElementById('descriptionPageProduit').innerText = item.description;
     let item_button = $("<button type=\"button\" onclick=\"add_item("+item.id+")\"></button>")
