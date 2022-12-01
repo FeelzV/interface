@@ -3,6 +3,7 @@ function clicMenuGauche(lien){
     lien.innerText += " cliqué!"
 }
 
-var ID_CLIENT = -1
-var TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
+var ID_CLIENT = window.localStorage.getItem('idClient');
+var TOKEN_CLIENT = window.localStorage.setItem('tokenClient', TOKEN_CLIENT);
 
+initialize();

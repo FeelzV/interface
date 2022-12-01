@@ -26,9 +26,11 @@ function connecter(courriel = null, mdp = null){
             "mdp": mdp==null?document.getElementById('mdp').value:mdp
         },
         success: function( result ) {
-            console.log("connecter success")
             ID_CLIENT = result.idClient;
             TOKEN_CLIENT = result.token;
+            window.localStorage.clear()
+            window.localStorage.setItem('idClient', ID_CLIENT);
+            window.localStorage.setItem('tokenClient', TOKEN_CLIENT);
             window.location.href = "#/";
             document.getElementById("connexion").innerHTML = "Deconnexion";
         },
@@ -37,11 +39,18 @@ function connecter(courriel = null, mdp = null){
         }
     });
 }
+function initialize()
+{
+    if(ID_CLIENT == -1){
+        document.getElementById("connexion").innerHTML = "Connexion";
+    }
+    else{
+        document.getElementById("connexion").innerHTML = "Deconnexion";
+    }
+}
 
 function deconnection()
 {
-    console.log("deco");
-    console.log(ID_CLIENT);
     if(ID_CLIENT  == -1)
     {
         window.location.href = "#/connexion";
@@ -51,6 +60,9 @@ function deconnection()
         document.getElementById("connexion").innerHTML = "Connexion";
         ID_CLIENT = -1;
         TOKEN_CLIENT = null;
+        window.localStorage.clear();
+        window.localStorage.setItem('idClient', ID_CLIENT);
+        window.localStorage.setItem('tokenClient', TOKEN_CLIENT);
     }
 }
 
