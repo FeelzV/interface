@@ -1,11 +1,10 @@
 
-$(document).ready(function(){
+function chargerpageProduit(){
     let id = decoderURLPourPorduit();
     if(id != null){
         getProduitById(id);
     }
-});
-
+}
 function getProduitById(id){
     $.ajax({
         url: "/produits/"+id,

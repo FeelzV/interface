@@ -1,9 +1,9 @@
 
-$(document).ready(function(){
+
+function charger(){
     filtrerAccueil();
     chargerCategoriesAccueil();
-});
-
+}
 function filtrerAccueil(){
 
     $('#sectionProduits').text("");
@@ -38,17 +38,19 @@ function filtrerAccueil(){
     }
 });
 }
+
+
 function itemToCard(item){
-    let itemContaine = $("<div onclick=\"ouvrirProduit("+item.id+")\"></div>").addClass("card mb-3 cardAccueil col-lg-4 col-md-6 col-sm-12");
+    let itemContaine = $("<a href=\"/#/pageProduit/"+item.id+"\"></a>").addClass("card mb-3 cardAccueil col-lg-4 col-md-6 col-sm-12");
     let itemRow = $("<div></div>").addClass("row g-0");
     let imageCol = $("<div></div>").addClass("col-md-4")
                     .append("<img src=\"images/"+item.nom+".png\" class=\"img-fluid rounded-start\" alt=\"...\">");
     let contentCol = $("<div></div>").addClass("col-md-8");
     let contentBody = $("<div></div>").addClass("card-body")
                         .append("<h5 class=\"card-title\">"+item.nom+"</h5>"+
-                        "<p class=\"card-text\">"+item.description+"</p>"+
-                        makeStars()+
-                        "<span>"+item.prix+"$</span>");
+                            "<p class=\"card-text\">"+item.description+"</p>"+
+                            makeStars()+
+                            "<span>"+item.prix+"$</span>");
     
     contentCol.append(contentBody);
     itemRow.append(imageCol).append(contentCol);
@@ -93,9 +95,4 @@ function categoryToListItem(item){
 function searchBar(){
     window.location.replace('/#/');
     filtrerAccueil();
-}
-
-function retourAccueil(){
-    $(window).attr('location','/#/');
-    window.location.reload();
 }

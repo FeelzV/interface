@@ -10,8 +10,16 @@ document.addEventListener('DOMContentLoaded', function(){
  */
 function chargerSousContenu(){
     let nom = "charger" + location.hash.replace('#/', '');
-    console.log("Appel de la fonction: " + nom)
-    window[nom]();
+
+    let morceaux = nom.split('/');
+    if(morceaux.length > 1){
+        nom = morceaux[0];
+        console.log("Appel de la fonction: " + nom+'('+morceaux[1]+')');
+        window[nom](morceaux[1]);
+    }else{
+        console.log("Appel de la fonction: " + nom);
+        window[nom]();
+    }
 }
 
 /**
