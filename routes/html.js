@@ -42,9 +42,6 @@ router.get('/confirmation', function(req, res){
 router.get('/pageProduit/:idProduit', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/pageProduit.html'));
     });
-=======
-router.get('/:image',function(req, res){
-    res.sendFile(path.join(__dirname + '/../client/' + req.params.image));
-});
+
 
 module.exports = router

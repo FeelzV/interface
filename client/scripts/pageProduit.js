@@ -1,6 +1,6 @@
 
-function chargerpageProduit(){
-    let id = decoderURLPourPorduit();
+function chargerpageProduit(id){
+   // let id = decoderURLPourPorduit();
     if(id != null){
         getProduitById(id);
     }
@@ -9,10 +9,7 @@ function getProduitById(id){
     $.ajax({
         url: "/produits/"+id,
         success: function( result ) {
-           
-                fairePageProduit(result)
-               // $('#pageProduit').append(item)
-            
+                fairePageProduit(result);
         }
     });
 }
@@ -25,19 +22,4 @@ function fairePageProduit(item){
                         .addClass("btn btn-primary position-relative")
                         .append('<i class="bi bi-cart-plus"></i>');
     $('#bodyPageProduit').append(item_button);
-}
-
-
-function ouvrirProduit(id){
-    window.location.replace("/#/pageProduit/"+id);
-    window.location.reload();
-}
-
-function decoderURLPourPorduit(){
-    let path = window.location.hash;
-    let morceaux = path.split('/');//morceaux[0] = '#', morceau[1] = nom de la page courante, morceau[2] = id du produit
-    if(morceaux[1] != "pageProduit")
-        return null;
-    else
-        return morceaux[2];
 }

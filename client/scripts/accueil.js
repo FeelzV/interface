@@ -90,9 +90,7 @@ function categoryToListItem(item){
                                             +"<label class=\"form-check-label\" for=\"radio"+item.id+"\">"+item.nom+"</label>");
     return listeItem;
 }
-//onChange=\"chargerProduitAccueilParCategorie("+item.id+")\"
 
 function searchBar(){
     window.location.replace('/#/');
-    filtrerAccueil();
 }
