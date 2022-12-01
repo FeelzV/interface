@@ -34,4 +34,7 @@ router.get('/commande', function(req, res){
 router.get('/confirmation', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/confirmation.html'));
     });
+router.get('/pageProduit/:idProduit', function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/pageProduit.html'));
+    });
 module.exports = router
