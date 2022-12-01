@@ -17,24 +17,41 @@ function attacherListenerMenuGauche(){
     }
 }
 
-function connecter(){
-    console.log("ok")
+function connecter(courriel = null, mdp = null){
     $.ajax({
         url:"/connexion",
         method:"POST",
         data:{
-            "courriel": document.getElementById('courriel').value,
-            "mdp": document.getElementById('mdp').value
+            "courriel": courriel==null?document.getElementById('courriel').value:courriel,
+            "mdp": mdp==null?document.getElementById('mdp').value:mdp
         },
         success: function( result ) {
-            //ID_CLIENT = result.items[0].id;
-            console.log(result.items);
-            //TODO Changer le texte de connexion pour client.prenom/nom et client présent = client.id
+            console.log("connecter success")
+            ID_CLIENT = result.idClient;
+            TOKEN_CLIENT = result.token;
+            window.location.href = "#/";
+            document.getElementById("connexion").innerHTML = "Deconnexion";
         },
         error: function(result){
             alert("Connexion invalide")
         }
     });
+}
+
+function deconnection()
+{
+    console.log("deco");
+    console.log(ID_CLIENT);
+    if(ID_CLIENT  == -1)
+    {
+        window.location.href = "#/connexion";
+    }
+    else
+    {
+        document.getElementById("connexion").innerHTML = "Connexion";
+        ID_CLIENT = -1;
+        TOKEN_CLIENT = null;
+    }
 }
 
 /**
