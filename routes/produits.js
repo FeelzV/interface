@@ -44,9 +44,13 @@ const rechercherProduitValidation = {
     serial: Joi.string(),
     nom: Joi.string(),
     description: Joi.string(),
-    prix: Joi.number()
+    prix: Joi.number(),
+    categorie: Joi.number(),
+    minimum: Joi.number(),
+    maximum :Joi.number()
   })
 };
+
 
 /**
  * Ajoute un nouveau produit. S'utilise avec une requête de type POST.
@@ -61,6 +65,7 @@ router.post('/', validate(nouveauProduitValidation), auth.admin, gProduits.ajout
  * Attention les espaces ne sont pas permis, il faut les remplacer par %20
  */
 router.get('/', validate(rechercherProduitValidation, {}, {}), gProduits.recupereProduit.bind(gProduits));
+
 
 /**
  * Retourne le produit avec l'id
@@ -77,5 +82,7 @@ router.put('/:idProduit', validate(modifierProduitValidation, {}, {}), auth.admi
  * Efface un produit. Attention, c'est permanent!
  */
 router.delete('/:idProduit', validate(adresseIdValidation, {}, {}), auth.admin, gProduits.effaceProduit.bind(gProduits));
+
+
 
 module.exports = router;

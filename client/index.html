@@ -29,22 +29,44 @@
     <script src="scripts/confirmation.js"></script>
     <script src="scripts/connexion.js"></script>
 
+    <link rel="stylesheet" href="style/accueil.css">
+
 </head>
 <body>
 <header id="navigation">
     <nav>
-        <a href="#"><img src="images/logo.png" alt="Logo de Pro-Gramme" /></a><br />
+       
         <div id="menu-principal">
             <div class="barre-menu">
                 <a href="#/" >Accueil</a>
                 <a id="connexion" onclick="deconnection()">Connexion</a>
                 <a href="#/produit">Produits</a>
                 <div class="deroulant"><button class="btn-deroulant">À propos</button>
+
+            
+            <div class="barre-menu" class="row">
+                <a href="#/" class="col-2" onclick="retourAccueil()"><img src="images/logoSVG.svg" alt="Logo de Pro-Gramme" style="width:inherit;height:inherit;"/></a>
+                <a href="#/inscription" class="col-2">Connexion</a>
+                <a class="col-4"><input type="text" onchange="searchBar()" id="searchBar" class="form-control" /></a>
+                
+                <a href="#/commande" class="col-2">Commandes</a>
+                <a href="#/panier" class="col-2">
+                    <button type="button" class="btn btn-primary position-relative">
+                        <i class="bi bi-cart-plus"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-
+                        pill bg-danger"
+                        id="item_counter">
+                        0
+                        </span>
+                    </button>
+                </a>
+                <!--<div class="deroulant"><button class="btn-deroulant">À propos</button>
+
                     <div class="sous-menu">
                         <a href="#/points_de_vente">Points de ventes</a>
                         <a href="histoire.html">Notre histoire</a>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </nav>
@@ -56,4 +78,10 @@
     Pro-Gramme - Tous droits réservés
 </footer>
 </body>
+<script src="scripts/main.js"></script>
+<script src="scripts/accueil.js"></script>
+<script src="scripts/inscription.js"></script>
+<script src="scripts/points_de_vente.js"></script>
+<script src="scripts/navigation.js"></script>
+
 </html>

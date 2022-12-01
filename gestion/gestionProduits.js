@@ -152,9 +152,11 @@ class GestionProduits {
       const description = req.query.description;
       const prix = parseFloat(req.query.prix);
       const qteInventaire = parseInt(req.query.qte_inventaire);
-      const categorie = req.query.categorie;
+      const categorie = parseFloat(req.query.categorie);
+      const minimum = parseFloat(req.query.minimum);
+      const maximum = parseFloat(req.query.maximum);
 
-      res.send(this.collectionProduit.rechercheProduit(serial, nom, description, prix, qteInventaire, categorie));
+      res.send(this.collectionProduit.rechercheProduit(serial, nom, description, prix, qteInventaire, categorie, minimum, maximum));
     } else { // sinon c'est un get avec ID ou sans contrainte
       let id = parseInt(req.params.idProduit);
       if (!(id >= 0)) { // sans la parenthese, !id est évalué avant le >= parce que javascript
@@ -177,8 +179,9 @@ class GestionProduits {
       res.status(400).send(`La catégorie ${id} n'existe pas`);
       return;
     }
-    const liste = this.collectionProduit.rechercheProduitCategorie(cat);
-    res.send(JSON.stringify(liste));
+    //const liste = this.collectionProduit.rechercheProduitCategorie(cat);
+    //res.send(JSON.stringify(liste));
+    res.send(this.collectionProduit.rechercheProduitCategorie(cat));
   }
 }
 
