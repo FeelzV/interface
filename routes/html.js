@@ -38,4 +38,9 @@ router.get('/commande', function(req, res){
 router.get('/confirmation', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/confirmation.html'));
     });
+router.get('/:image',function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/' + req.params.image));
+});
+
+    
 module.exports = router
