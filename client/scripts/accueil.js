@@ -42,7 +42,7 @@ function itemToCard(item){
     let itemContaine = $("<div></div>").addClass("card mb-3 cardAccueil col-lg-4 col-md-6 col-sm-12");
     let itemRow = $("<div></div>").addClass("row g-0");
     let imageCol = $("<div></div>").addClass("col-md-4")
-                    .append("<img src=\"images/"+item.nom+".png\" class=\"img-fluid rounded-start\" alt=\"...\">");
+                    .append("<img src=\"images/"+item.nom+".jpg\" class=\"img-fluid rounded-start\" alt=\"...\">");
     let contentCol = $("<div></div>").addClass("col-md-8");
     let contentBody = $("<div></div>").addClass("card-body")
                         .append("<h5 class=\"card-title\">"+item.nom+"</h5>"+
