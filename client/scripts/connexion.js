@@ -41,16 +41,21 @@ function connecter(courriel = null, mdp = null){
 }
 function initialize()
 {
+    console.log("init");
+    console.log(ID_CLIENT);
     if(ID_CLIENT == -1){
+
         document.getElementById("connexion").innerHTML = "Connexion";
     }
     else{
+        console.log("Decotext")
         document.getElementById("connexion").innerHTML = "Deconnexion";
     }
 }
 
 function deconnection()
 {
+    console.log(window.localStorage.getItem('idClient'))
     if(ID_CLIENT  == -1)
     {
         window.location.href = "#/connexion";
@@ -58,6 +63,7 @@ function deconnection()
     else
     {
         document.getElementById("connexion").innerHTML = "Connexion";
+        window.location.href = "#/";
         ID_CLIENT = -1;
         TOKEN_CLIENT = null;
         window.localStorage.clear();
