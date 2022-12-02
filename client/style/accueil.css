@@ -5,3 +5,21 @@
     margin: 5px;
     box-shadow: 5px 5px 10px black;
 }
+
+.statusrouge {
+    background-color: rgb(255, 0, 0);  
+    border: 2px solid rgb(0, 0, 0);
+    padding: .5em;
+  }
+  
+.statusvert {
+    background-color: rgb(19, 170, 5);  
+    border: 2px solid rgb(0, 0, 0);
+    padding: .5em;
+}
+  
+.statusjaune {
+    background-color: rgb(240, 237, 52);  
+    border: 2px solid rgb(0, 0, 0);
+    padding: .5em;
+}

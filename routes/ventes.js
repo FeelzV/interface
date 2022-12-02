@@ -45,8 +45,8 @@ const rechercherVenteValidation = {
 /**
  * Retourne la liste de toutes les ventes.
  */
-router.get('/', auth.admin, validate(rechercherVenteValidation), gVentes.recupererVente.bind(gVentes));
-
+//router.get('/', auth.admin, validate(rechercherVenteValidation), gVentes.recupererVente.bind(gVentes));
+router.get('/',  validate(rechercherVenteValidation, {}, {}), gVentes.recupererVente.bind(gVentes));
 /**
  * Effectue une vente, c'est-à-dire transforme un panier en vente
  */
