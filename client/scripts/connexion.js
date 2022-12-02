@@ -35,7 +35,8 @@ function connecter(courriel = null, mdp = null){
             document.getElementById("connexion").innerHTML = "Deconnexion";
 
             if(ID_CLIENT == 0){
-                document.getElementById("adminPage").style.display = "visible";
+                document.getElementById("adminPage").style.display = "block";
+                document.getElementById("idPanier").style.display = "none";
             }
             updatepaniertooltip();
         },
@@ -48,10 +49,12 @@ function initialize()
 {
 
     if(ID_CLIENT != 0){
-        document.getElementById("adminPage").style.display = "hidden";
+        document.getElementById("adminPage").style.display = "none";
+        document.getElementById("idPanier").style.display = "block";
     }
     else{
-        document.getElementById("adminPage").style.display = "visible";
+        document.getElementById("adminPage").style.display = "block";
+        document.getElementById("idPanier").style.display = "none";
     }
 
     if(ID_CLIENT == -1){
@@ -69,7 +72,8 @@ function deconnection()
 {
 
     if(ID_CLIENT == 0){
-        document.getElementById("adminPage").style.display = "hidden";
+        document.getElementById("adminPage").style.display = "none";
+        document.getElementById("idPanier").style.display = "block";
     }
 
     console.log(window.localStorage.getItem('idClient'))
