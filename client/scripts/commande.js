@@ -1,10 +1,10 @@
 function chargercommande(){
     $('#list_panier').text('');
     $.ajax({
-        url: "/clients/"+ID_CLIENT+"/panier",
+        url: "/clients/"+window.localStorage.getItem('idClient')+"/panier",
         method:"GET",
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            xhr.setRequestHeader('Authorization', "Basic "+ window.localStorage.getItem('tokenClient'));
         },
         success: function( result ){
             for(let i in result.items){
@@ -51,10 +51,10 @@ function commande(){
     $.ajax({
         url: "/ventes/",
         method:"POST",
-        data: JSON.stringify({idClient: ID_CLIENT}),
+        data: JSON.stringify({idClient: window.localStorage.getItem('idClient')}),
         contentType: "application/json",
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            xhr.setRequestHeader('Authorization', "Basic "+ window.localStorage.getItem('tokenClient'));
         },
         success: function( result ){
             console.log(result)
