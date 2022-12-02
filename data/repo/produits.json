@@ -5,9 +5,7 @@
         "nom": "Banane",
         "description": "miam",
         "prix": 2.35,
-
         "qte_inventaire": 151,
-
         "categorie": {
             "id": 1,
             "nom": "nourriture",
@@ -20,9 +18,7 @@
         "nom": "Barre protéinée",
         "description": "yum",
         "prix": 3.69,
-
-        "qte_inventaire": 36,
-
+        "qte_inventaire": 32,
         "categorie": {
             "id": 1,
             "nom": "nourriture",
