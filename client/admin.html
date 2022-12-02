@@ -1,0 +1,30 @@
+<section id="sectionFiltre" style="float:left;width:20%;">
+    <h1>Filtres</h1>
+      <div>
+        <h3>Prix</h3>
+        <div>
+          <label for="accueilFiltreMin" class="form-label">Minimum</label>
+          <input type="text" class="form-control" id="accueilFiltreMin">
+        </div>
+        <div>
+          <label class="form-label" for="accueilFiltreMax">Maximum</label>
+          <input type="text" id="accueilFiltreMax" class="form-control">
+        </div>
+      </div>
+      <div>
+        <h3>Catégorie</h3>
+        <ul id="listeCategorie"><!--Est rempli par JS-->
+          <li>
+            <input id="radioCategorie" type="radio" name="categorie" value="" class="form-check-input" checked="">
+            <label for="radioCategorie" class="form-check-label">Toute catégories</label>
+          </li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-primary" onclick="filtrerAdmin()">Filtrer</button>
+  </section>
+
+
+</section>
+<section id="sectionProduits" style="float:right;width:80%;" class="row"><!--Est rempli par JS-->
+    
+</section>
