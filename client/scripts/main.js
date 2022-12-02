@@ -3,7 +3,11 @@ function clicMenuGauche(lien){
     lien.innerText += " cliqué!"
 }
 
+function noLoginAlert(){
+    document.getElementById("noLoginAlert").style ="display:block";
+    setTimeout(() => {document.getElementById("noLoginAlert").style = "display:none";},4000);
+}
 var ID_CLIENT = window.localStorage.getItem('idClient');
-var TOKEN_CLIENT = window.localStorage.setItem('tokenClient', TOKEN_CLIENT);
+var TOKEN_CLIENT = window.localStorage.getItem('tokenClient');
 
 initialize();

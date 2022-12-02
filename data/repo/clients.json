@@ -688,5 +688,77 @@
             "items": []
         },
         "historique": []
+    },
+    {
+        "id": 4,
+        "prenom": "Felix",
+        "nom": "Vaillancourt",
+        "age": 21,
+        "adresse": "fsdkhgjshkjgf",
+        "pays": "can",
+        "courriel": "felix@courriel.com",
+        "mdp": "$2b$08$b1VdLtjkBahkLocUfy9IJeTJHSvUkh9LSMm8R7EISHydbTlyNYuH2",
+        "panier": {
+            "valeur": 33.85000000000001,
+            "items": [
+                {
+                    "id": 0,
+                    "idProduit": 0,
+                    "nomProduit": "Banane",
+                    "descriptionProduit": "miam",
+                    "prix": 2.35,
+                    "quantite": 2
+                },
+                {
+                    "id": 1,
+                    "idProduit": 1,
+                    "nomProduit": "Barre protéinée",
+                    "descriptionProduit": "yum",
+                    "prix": 3.69,
+                    "quantite": 1
+                },
+                {
+                    "id": 2,
+                    "idProduit": 2,
+                    "nomProduit": "concombre",
+                    "descriptionProduit": "vert",
+                    "prix": 2.23,
+                    "quantite": 1
+                },
+                {
+                    "id": 3,
+                    "idProduit": 3,
+                    "nomProduit": "café",
+                    "descriptionProduit": "go fast",
+                    "prix": 6.69,
+                    "quantite": 1
+                },
+                {
+                    "id": 4,
+                    "idProduit": 5,
+                    "nomProduit": "G-fuel",
+                    "descriptionProduit": "gaming fuel",
+                    "prix": 5.44,
+                    "quantite": 1
+                },
+                {
+                    "id": 5,
+                    "idProduit": 4,
+                    "nomProduit": "Monster",
+                    "descriptionProduit": "i am speed",
+                    "prix": 4.44,
+                    "quantite": 1
+                },
+                {
+                    "id": 6,
+                    "idProduit": 6,
+                    "nomProduit": "Tank top",
+                    "descriptionProduit": "Black",
+                    "prix": 6.66,
+                    "quantite": 1
+                }
+            ]
+        },
+        "historique": []
     }
 ]

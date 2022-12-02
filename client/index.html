@@ -20,58 +20,61 @@
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style/main.css">
-    <script src="scripts/main.js"></script>
-    <script src="scripts/inscription.js"></script>
-    <script src="scripts/points_de_vente.js"></script>
-    <script src="scripts/navigation.js"></script>
-    <script src="scripts/produit.js"></script>
-    <script src="scripts/commande.js"></script>
-    <script src="scripts/confirmation.js"></script>
-    <script src="scripts/connexion.js"></script>
-    <script src="scripts/accueil.js"></script>
-    <script src="scripts/pageProduit.js"></script>
-    
     <link rel="stylesheet" href="style/accueil.css">
 
 </head>
 <body>
-<header id="navigation">
-    <nav>
-        <div id="menu-principal">
-            <div class="barre-menu" class="row">
+    <header id="navigation">
+        <nav>
+            <div id="menu-principal">
+                <div class="barre-menu" class="row">
 
-                <a href="#/" class="col-2"><img src="images/logoSVG.svg" alt="Logo de Pro-Gramme" style="width:inherit;height:inherit;"/></a>
-                <a id="connexion" onclick="deconnection()">Connexion</a>
+                    <a href="#/" class="col-2"><img src="images/logoSVG.svg" alt="Logo de Pro-Gramme" style="width:inherit;height:inherit;"/></a>
+                    <a id="connexion" class="col-2" onclick="deconnection()">Connexion</a>
 
-                <a class="col-4"><input type="text" onchange="searchBar()" id="searchBar" class="form-control" /></a>
-                <a href="#/commande" class="col-2">Commandes</a>
-                <a href="#/panier" class="col-2">
-                    <button type="button" class="btn btn-primary position-relative">
-                        <i class="bi bi-cart-plus"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-
-                        pill bg-danger"
-                        id="item_counter">
-                        0
-                        </span>
-                    </button>
-                </a>
-                <!--<div class="deroulant"><button class="btn-deroulant">À propos</button>
+                    <a class="col-4"><input type="text" onchange="searchBar()" id="searchBar" class="form-control" /></a>
+                    <a href="#/commande" class="col-2">Commandes</a>
+                    <a href="#/panier" class="col-2">
+                        <button type="button" class="btn btn-primary position-relative">
+                            <i class="bi bi-cart-plus"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-
+                            pill bg-danger"
+                            id="item_counter">
+                            0
+                            </span>
+                        </button>
+                    </a>
+                    <!--<div class="deroulant"><button class="btn-deroulant">À propos</button>
 
-                    <div class="sous-menu">
-                        <a href="#/points_de_vente">Points de ventes</a>
-                        <a href="histoire.html">Notre histoire</a>
-                    </div>
-                </div>-->
+                        <div class="sous-menu">
+                            <a href="#/points_de_vente">Points de ventes</a>
+                            <a href="histoire.html">Notre histoire</a>
+                        </div>
+                    </div>-->
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
-<div id="corps-principal">
+        </nav>
+    </header>
+    <div id="corps-principal">
 
-</div>
-<footer>
-    Pro-Gramme - Tous droits réservés
-</footer>
+    </div>
+    <div id="noLoginAlert" class="alert alert-danger alert-fixed" role="alert" style="display:none">
+        Veuillez vous connecter pour accéder à cette fonctionnalité.
+    </div>
+    <footer>
+        Pro-Gramme - Tous droits réservés
+    </footer>
+    
 </body>
 
+<script src="scripts/connexion.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/inscription.js"></script>
+<script src="scripts/points_de_vente.js"></script>
+<script src="scripts/navigation.js"></script>
+<script src="scripts/produit.js"></script>
+<script src="scripts/commande.js"></script>
+<script src="scripts/confirmation.js"></script>
+<script src="scripts/accueil.js"></script>
+<script src="scripts/pageProduit.js"></script>
 </html>

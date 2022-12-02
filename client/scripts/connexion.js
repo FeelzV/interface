@@ -41,7 +41,7 @@ function connecter(courriel = null, mdp = null){
 }
 function initialize()
 {
-    if(ID_CLIENT == -1){
+    if(ID_CLIENT == -1 || ID_CLIENT == null){
         document.getElementById("connexion").innerHTML = "Connexion";
     }
     else{
