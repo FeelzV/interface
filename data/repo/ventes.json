@@ -13,7 +13,7 @@
                 "quantite": 4
             }
         ],
-        "status": "reçue",
+        "status": "en_route",
         "date": "1970-01-01T00:00:00.000Z"
     },
     {
@@ -30,7 +30,7 @@
                 "quantite": 4
             }
         ],
-        "status": "reçue",
+        "status": "prepare",
         "date": "2021-11-13T21:38:51.796Z"
     },
     {
@@ -47,7 +47,7 @@
                 "quantite": 4
             }
         ],
-        "status": "reçue",
+        "status": "prepare",
         "date": "2021-11-13T21:43:08.528Z"
     },
     {
@@ -64,7 +64,7 @@
                 "quantite": 4
             }
         ],
-        "status": "reçue",
+        "status": "recue",
         "date": "2021-11-13T21:44:38.858Z"
     },
     {
@@ -154,7 +154,7 @@
                 "quantite": 1
             }
         ],
-        "status": "reçue",
+        "status": "prepare",
         "date": "2022-11-29T15:17:26.901Z"
     },
     {
@@ -204,7 +204,7 @@
                 "quantite": 1
             }
         ],
-        "status": "reçue",
+        "status": "livree",
         "date": "2022-11-29T17:00:05.426Z"
     },
     {
@@ -697,15 +697,12 @@
     {
         "id": 32,
         "idClient": 1,
-
         "montant": 2.35,
-
         "produits": [
             {
                 "id": 0,
                 "idProduit": 0,
                 "nomProduit": "Banane",
-
                 "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
                 "prix": 24.76,
                 "quantite": 1
@@ -739,7 +736,6 @@
                 "id": 1,
                 "idProduit": 0,
                 "nomProduit": "Banane",
-
                 "descriptionProduit": "miam",
                 "prix": 2.35,
                 "quantite": 1
@@ -747,6 +743,5 @@
         ],
         "status": "reçue",
         "date": "2022-12-02T04:29:20.496Z"
-
     }
 ]

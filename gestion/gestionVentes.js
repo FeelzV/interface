@@ -77,7 +77,7 @@ class GestionVentes {
       res.status(400).send(`La vente avec l'id ${id} n'a pas été trouvée`);
       return;
     }
-    this.collectionClient.modifierStatusHistorique(vente, status);
+      
     res.send(this.collectionVente.modifierVente(vente, status));
   }
 

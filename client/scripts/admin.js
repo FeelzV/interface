@@ -14,6 +14,25 @@ function chargeradmin(){
 });
 }
 
+function changerStatus(couleur){
+    let data = {};
+    let id = document.getElementById('titrepageVente').innerText.substring(7);
+    //data.idVente = parseInt(document.getElementById('titrepageVente').innerText.substring(7));
+    data.status = couleur;
+
+    $.ajax({
+    url: "/ventes/"+id,
+    method:"PUT",
+    data:data,
+    beforeSend: function (xhr){
+        xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+    },
+    success: function( result ) {
+        console.log("Status changé");
+    }
+});
+}
+
 function itemToCardAdmin(item){
 
     let itemContaine = $("<a href=\"/#/pageVente/"+item.id+"\"></a>").addClass("card mb-3 cardAccueil col-lg-4 col-md-6 col-sm-12");
@@ -22,12 +41,15 @@ function itemToCardAdmin(item){
             "<h5 class=\"card-text\">"+"Id du client : "+item.idClient+"</h5>"+
             "<h5 class=\"card-text\">"+"Montant payé : "+item.montant+"$"+"</h5>");
 
-    let statusClass = "statusvert";
+    let statusClass = "statusbleu";
     if(item.status == "prepare"){
         statusClass = "statusjaune"
     }
-    if(item.status == "annule"){
-        statusClass = "statusrouge"
+    if(item.status == "en_route"){
+        statusClass = "statusorange"
+    }
+    if(item.status == "livree"){
+        statusClass = "statusvert"
     }
 
     itemRow.append("<h5 class=\""+statusClass+"\"></h5>");

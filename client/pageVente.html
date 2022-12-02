@@ -1,12 +1,18 @@
 <div id="pageVente" class="px-4 py-5 my-5 text-center">
     <div class="row g-0">
-        <div class="col-md-8">
+        
           <div class="card-body" id="bodypageVente">
             <h5 class="card-title" id="titrepageVente"></h5>
             <section class="card-text" id="descriptionpageVente"></section>
             <div class="card-text" id="SuiteDescription">
             </div>
           </div>
-        </div>
+        
+        <div>Change Status
+        <button style="background-color:rgb(42, 133, 238);" onclick="changerStatus('recue')">Reçus</button>
+        <button style="background-color:rgb(240, 237, 52);" onclick="changerStatus('prepare')">Prepare</button>
+        <button style="background-color:rgb(207, 148, 39);" onclick="changerStatus('en_route')">En route</button>
+        <button style="background-color:rgb(9, 196, 18);" onclick="changerStatus('livree')">Livrée</button>
       </div>
+    </div>
 </div>
