@@ -1,0 +1,172 @@
+<section class="mt-2 container">
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="row">
+                <h3>Paiement</h3>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"># Carte</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Numéro de carte">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Nom</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Nom du titulaire de la carte">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3 halfwidth">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Date</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Date d'expiration">
+                </div>
+                <div class="input-group mb-3 halfwidth">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">CVV</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Numéro de sécurité">
+                </div>
+            </div>
+            <div class="row">
+                <h3>Facturation</h3>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3 halfwidth">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Prénom</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Prénom">
+                </div>
+                <div class="input-group mb-3 halfwidth">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Nom</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Nom">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Pays</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Pays">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3 threefourthwidth">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Addresse</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Addresse">
+                </div>
+                <div class="input-group mb-3 quarterwidth">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">App.</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="(opt)">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3 thirdwidth">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Ville</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Ville">
+                </div>
+                <div class="input-group mb-3 thirdwidth">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Province</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Province">
+                </div>
+                <div class="input-group mb-3 thirdwidth">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Code postal</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Code postal">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3 ">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"># Telephone</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Numéro de téléphone">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3 ">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Mode de livraison</span>
+                    </div>
+                    <select class="form-select custom-select">
+                        <option selected>Régulière</option>
+                        <option value="1">Rapide</option>
+                        <option value="2">Ultra-rapide</option>
+                    </select>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            
+            <div class="row" id="list_panier">
+    
+            </div>
+            <div class="payment_info_large">
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <h5 id="sous_total_text">Sous-total:</h5>
+                    </div>
+                    <div class="col right-content">
+                        <h5 id="sous_total">0</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h5>Livraison:</h5>
+                    </div>
+                    <div class="col right-content">
+                        <h5 id="livraison">0</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h5>Taxes:</h5>
+                    </div>
+                    <div class="col right-content">
+                        <h5 id="taxes">0</h5>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <h5>Total:</h5>
+                    </div>
+                    <div class="col right-content">
+                        <h5 id="total">0</h5>
+                    </div>
+                </div>
+        
+        
+            </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button onclick="window.location.href = '#/panier'" type="button" class="btn btn-outline-warning" id="panier">Revenir au panier</button>
+        </div>
+        <div class="col right-content">
+            <button onclick="commande()" type="button" class="btn btn-warning" id="confirmer">Envoyer la commande</button>
+        </div>
+    </div>
+</section>

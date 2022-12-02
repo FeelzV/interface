@@ -8,7 +8,8 @@ function chargerproduit(){
         })
     }
     });
-    }
+}
+
 function item_to_html(item){
     item_card = $('<div></div>')
     .addClass('card mb-4 rounded-3 shadow-sm');
@@ -43,8 +44,6 @@ $(function () {
 });
 
 function add_item(id_item){
-    ID_CLIENT = 1
-    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
     $.ajax({
         url: "/clients/"+ID_CLIENT+"/panier",
         method:"POST",
@@ -59,8 +58,7 @@ function add_item(id_item){
 };
 
 function chargerpanier(){
-    ID_CLIENT = 1
-    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
+    $('#list_panier').text('');
     $.ajax({
         url: "/clients/"+ID_CLIENT+"/panier",
         method:"GET",
@@ -68,36 +66,89 @@ function chargerpanier(){
             xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
         },
         success: function( result ){
-            $('#prixTotal').text("Total : "+result.valeur)
             for(let i in result.items){
-                $('#list_panier').append(panier_to_html(result.items[i]))
+                if (result.items[i].quantite <= 0){
+                    retirer_item(result.items[i].id)
+                }
+                else{
+                    $('#list_panier').append(panier_to_html(result.items[i]))
+                }
             }
+            $('#sous_total_text').text(`Sous-total (${result.items.length} items) :`);
+            $('#sous_total').text(result.valeur.toFixed(2));
+            $('#livraison').text((result.valeur*0.1).toFixed(2));
+            $('#taxes').text((result.valeur*0.15).toFixed(2));
+            $('#total').text((result.valeur*1.25).toFixed(2));
         }
         });
 }
 
 function panier_to_html(item){
-    item_name = $('<div></div>')
-    .addClass('col centrer')
-    .append(`<h4>${item.nomProduit}</h4>`)
-    item_price = $('<div></div>')
-    .addClass('col centrer')
-    .append(`<h4>${item.prix}</h4>`)
-    item_qte = $('<div></div>')
-    .addClass('col centrer')
-    .append(`<h4>${item.quantite}</h4>`)
-    item_soustot = $('<div></div>')
-    .addClass('col centrer')
-    .append(`<h4>${item.quantite*item.prix}</h4>`)
-    item_spacer = $('<div></div>')
-    .addClass('col centrer')
-    item_row = $('<div></div>')
-    .addClass('row')
-    .append(item_name)
-    .append(item_price)
-    .append(item_qte)
-    .append(item_soustot)
-    .append(item_spacer)
-    return item_row;
+    container = $('<div class="row cart_item_container"></div>');
+    item_image_container = $('<div class="col centrer contain_height"></div>');
+    item_image=$(`<img class="panier_image">`).attr('src', "images/"+item.nomProduit+".jpg");
+    item_image_container.append(item_image);
+    item_desc_container = $('<div class="col centrer"></div>');
+    item_desc_container.append(`<h4>${item.nomProduit}</h4>`);
+    item_desc_container.append(`<h6>${item.prix}</h6>`);
+    spacer = $('<div class="col centrer contain_height"></div>');
+    spacer.append(`<p class="contain_height"> ${item.descriptionProduit} </p>`);
+
+    item_qtt_container=$('<div class="col centrer contain_height"></div>');
+
+    item_qtt_container.append($('<div class="row"></div>').append(`<h6 class="noMargin">Quantité</h6>`));
+
+    item_qtt_controller = $('<div class="qtt_control_container centrer"></div>');
+    minus_container = $('<div class="qtt_control minus"></div>');
+    minus_button = $(`<button type="button" class="btn btn-outline-danger qtt_button qtt">-</button>`).attr('onclick', `update_qtt(${item.id}, -1)`);
+    minus_container.append(minus_button);
+    minus_container.append(minus_button)
+    qtt_container = $('<div class="qtt_control currentqtt"></div>');
+    qtt_container.append(`<h6 class="qtt">${item.quantite}</h6>`)
+    plus_container = $('<div class="qtt_control plus"></div>');
+    plus_button = $(`<button type="button" class="btn btn-outline-success qtt_button qtt">+</button>`).attr('onclick', `update_qtt(${item.id}, 1)`);
+    plus_container.append(plus_button);
+
+    item_qtt_controller.append(minus_container).append(qtt_container).append(plus_container);
+
+    item_retirer_button_container = $('<div class="row"></div>');
+    item_retirer_button = $(`<button type="button" class="btn btn-outline-danger retirer" onclick="retirer_item(${item.id})">retirer</button>`)
+    item_retirer_button_container.append(item_retirer_button);
+
+    
+    item_qtt_container.append(item_qtt_controller).append(item_retirer_button_container);
+
+    container.append(item_image_container).append(item_desc_container).append(spacer).append(spacer).append(item_qtt_container);
+    return container;
     }
 
+
+function retirer_item(itemid){
+    ID_CLIENT = 1
+    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
+    $.ajax({
+        url: "/clients/"+ID_CLIENT+"/panier/"+itemid,
+        method:"DELETE",
+        beforeSend: function (xhr){
+            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+        },
+        success: chargerpanier
+    });
+}
+
+function update_qtt(itemid, qtt){
+    ID_CLIENT = 1
+    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
+    
+    
+    $.ajax({
+        url: "/clients/"+ID_CLIENT+"/panier/"+itemid,
+        method:"PUT",
+        data: JSON.stringify({"quantite": qtt}),
+        contentType: "application/json",
+        beforeSend: function (xhr){
+            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+        },
+        success: chargerpanier
+    });
+}

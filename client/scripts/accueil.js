@@ -1,21 +1,11 @@
-$(document).ready(function(){
-    chargerProduitAccueil();
-    chargerCategoriesAccueil();
-});
 
-function chargerProduitAccueil(){
-    $('#sectionProduits').text("");
-    $.ajax({
-    url: "/produits",
-    success: function( result ) {
-        $.each(result, function(key,value){
-            item = itemToCard(value)
-            $('#sectionProduits').append(item)
-        })
-    }
-});
+
+function charger(){
+    filtrerAccueil();
+    chargerCategoriesAccueil();
 }
 function filtrerAccueil(){
+
     $('#sectionProduits').text("");
     let data = {};//Faire un objet data dynamiquement
     let minimum = $("#accueilFiltreMin").val();
@@ -48,22 +38,39 @@ function filtrerAccueil(){
     }
 });
 }
+
+
 function itemToCard(item){
-    let itemContaine = $("<div></div>").addClass("card mb-3 cardAccueil col-lg-4 col-md-6 col-sm-12");
+    let itemContaine = $("<a href=\"/#/pageProduit/"+item.id+"\"></a>").addClass("card mb-3 cardAccueil col-lg-4 col-md-6 col-sm-12");
     let itemRow = $("<div></div>").addClass("row g-0");
     let imageCol = $("<div></div>").addClass("col-md-4")
-                    .append("<img src=\"images/logo.png\" class=\"img-fluid rounded-start\" alt=\"...\">");
+                    .append("<img src=\"images/"+item.nom+".jpg\" class=\"img-fluid rounded-start\" alt=\"...\">");
     let contentCol = $("<div></div>").addClass("col-md-8");
     let contentBody = $("<div></div>").addClass("card-body")
                         .append("<h5 class=\"card-title\">"+item.nom+"</h5>"+
-                        "<p class=\"card-text\">"+item.description+"</p>"+
-                        "<span class=\"card-text\">&starf;&starf;&starf;&star;&star;</span>"+
-                        "<span>"+item.prix+"$</span>");
+                            "<p class=\"card-text\">"+item.description+"</p>"+
+                            makeStars()+
+                            "<span>"+item.prix+"$</span>");
     
     contentCol.append(contentBody);
     itemRow.append(imageCol).append(contentCol);
     itemContaine.append(itemRow);
     return itemContaine;
+}
+
+function makeStars(){
+    let numberOfStar = Math.random() *5;
+    let starText = "<span class=\"card-text stars\">"
+    //Mettre étoiles remplies
+    for(let i =0; i< numberOfStar;i++){
+        starText += "&starf;";
+    }
+    //Mettre étoiles vides
+    for(let i =0; i< 4-numberOfStar;i++){
+        starText += "&star;";
+    }
+    starText += "</span>";
+    return starText;
 }
 
 function chargerCategoriesAccueil(){
@@ -83,9 +90,7 @@ function categoryToListItem(item){
                                             +"<label class=\"form-check-label\" for=\"radio"+item.id+"\">"+item.nom+"</label>");
     return listeItem;
 }
-//onChange=\"chargerProduitAccueilParCategorie("+item.id+")\"
 
 function searchBar(){
-    $(window).attr('location','http://localhost:3000/#/');
-    filtrerAccueil();
+    window.location.replace('/#/');
 }
