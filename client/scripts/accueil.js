@@ -93,4 +93,5 @@ function categoryToListItem(item){
 
 function searchBar(){
     window.location.replace('/#/');
+    filtrerAccueil();
 }
