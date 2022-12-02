@@ -53,6 +53,9 @@ function add_item(id_item){
         },
         success: function( result ) {
             $('#item_counter').text(result.items.length)
+        },
+        error: function( result ) {
+            noLoginAlert();
         }
         });
 };
@@ -79,8 +82,27 @@ function chargerpanier(){
             $('#livraison').text((result.valeur*0.1).toFixed(2));
             $('#taxes').text((result.valeur*0.15).toFixed(2));
             $('#total').text((result.valeur*1.25).toFixed(2));
+        },
+        error: function( result ) {
+            noLoginAlert();
         }
         });
+}
+
+function updatepaniertooltip(){
+    if( ID_CLIENT != null && TOKEN_CLIENT != null && ID_CLIENT != -1){
+        $.ajax({
+            url: "/clients/"+ID_CLIENT+"/panier",
+            method:"GET",
+            beforeSend: function (xhr){
+                xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            },
+            success: function( result ){
+                $('#item_counter').text(result.items.length)
+            }
+            });
+    }
+    
 }
 
 function panier_to_html(item){
@@ -130,7 +152,10 @@ function retirer_item(itemid){
         beforeSend: function (xhr){
             xhr.setRequestHeader('Authorization', "Basic "+ window.localStorage.getItem('tokenClient'));
         },
-        success: chargerpanier
+        success: chargerpanier,
+        error: function( result ) {
+            noLoginAlert();
+        }
     });
 }
 
@@ -143,6 +168,14 @@ function update_qtt(itemid, qtt){
         beforeSend: function (xhr){
             xhr.setRequestHeader('Authorization', "Basic "+ window.localStorage.getItem('tokenClient'));
         },
-        success: chargerpanier
+        success: chargerpanier,
+        error: function( result ) {
+            noLoginAlert();
+        }
     });
 }
+
+
+window.addEventListener('load', function(){
+    updatepaniertooltip();
+});

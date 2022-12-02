@@ -16,6 +16,9 @@ function chargercommande(){
             $('#livraison').text((result.valeur*0.1).toFixed(2));
             $('#taxes').text((result.valeur*0.15).toFixed(2));
             $('#total').text((result.valeur*1.25).toFixed(2));
+        },
+        error: function( result ) {
+            noLoginAlert();
         }
         });
 }
@@ -23,7 +26,7 @@ function chargercommande(){
 function commande_to_html(item){
     container = $('<div class="row cart_item_container"></div>');
     item_image_container = $('<div class="col centrer contain_height"></div>');
-    item_image=$(`<img class="panier_image">`).attr('src', "images/"+item.nomProduit+".png");
+    item_image=$(`<img class="panier_image">`).attr('src', "images/"+item.nomProduit+".jpg");
     item_image_container.append(item_image);
     item_desc_container = $('<div class="col centrer contain_height"></div>');
     item_desc_container.append(`<h5>${item.nomProduit}</h5>`);
@@ -59,8 +62,8 @@ function commande(){
             window.location.href = "#/confirmation";
             
         },
-        error: function( result ){
-            console.log(result);
+        error: function( result ) {
+            noLoginAlert();
         }
     })
 }
