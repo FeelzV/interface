@@ -55,7 +55,7 @@ function add_item(id_item){
             $('#item_counter').text(result.items.length)
         },
         error: function( result ) {
-            noLoginAlert();
+            noLoginAlert(result.status);
         }
         });
 };
@@ -84,7 +84,7 @@ function chargerpanier(){
             $('#total').text((result.valeur*1.25).toFixed(2));
         },
         error: function( result ) {
-            noLoginAlert();
+            noLoginAlert(result.status);
         }
         });
 }
@@ -101,6 +101,9 @@ function updatepaniertooltip(){
                 $('#item_counter').text(result.items.length)
             }
             });
+    }
+    else{
+        $('#item_counter').text(0)
     }
     
 }
@@ -154,7 +157,7 @@ function retirer_item(itemid){
         },
         success: chargerpanier,
         error: function( result ) {
-            noLoginAlert();
+            noLoginAlert(result.status);
         }
     });
 }
@@ -170,12 +173,8 @@ function update_qtt(itemid, qtt){
         },
         success: chargerpanier,
         error: function( result ) {
-            noLoginAlert();
+            noLoginAlert(result.status);
         }
     });
 }
 
-
-window.addEventListener('load', function(){
-    updatepaniertooltip();
-});

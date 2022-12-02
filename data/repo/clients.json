@@ -9,8 +9,17 @@
         "courriel": "felix@c.com",
         "mdp": "$2b$08$M2UAeP6NtN4ThzgPOp2OceNHzFOB2F8oW/yLpw7Mb1AoQX.1sAfW2",
         "panier": {
-            "valeur": 0,
-            "items": []
+            "valeur": 3.69,
+            "items": [
+                {
+                    "id": 0,
+                    "idProduit": 1,
+                    "nomProduit": "Barre protéinée",
+                    "descriptionProduit": "yum",
+                    "prix": 3.69,
+                    "quantite": 1
+                }
+            ]
         },
         "historique": [
             {

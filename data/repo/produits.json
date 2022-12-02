@@ -18,7 +18,7 @@
         "nom": "Barre protéinée",
         "description": "yum",
         "prix": 3.69,
-        "qte_inventaire": 37,
+        "qte_inventaire": 36,
         "categorie": {
             "id": 1,
             "nom": "nourriture",

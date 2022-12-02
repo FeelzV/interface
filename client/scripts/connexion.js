@@ -33,6 +33,7 @@ function connecter(courriel = null, mdp = null){
             window.localStorage.setItem('tokenClient', TOKEN_CLIENT);
             window.location.href = "#/";
             document.getElementById("connexion").innerHTML = "Deconnexion";
+            updatepaniertooltip();
         },
         error: function(result){
             alert("Connexion invalide")
@@ -48,6 +49,7 @@ function initialize()
         console.log("Decotext")
         document.getElementById("connexion").innerHTML = "Deconnexion";
     }
+    
 }
 
 function deconnection()
@@ -67,6 +69,7 @@ function deconnection()
         window.localStorage.setItem('idClient', ID_CLIENT);
         window.localStorage.setItem('tokenClient', TOKEN_CLIENT);
     }
+    updatepaniertooltip();
 }
 
 /**

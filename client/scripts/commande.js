@@ -18,7 +18,7 @@ function chargercommande(){
             $('#total').text((result.valeur*1.25).toFixed(2));
         },
         error: function( result ) {
-            noLoginAlert();
+            noLoginAlert(result.status);
         }
         });
 }
@@ -63,8 +63,7 @@ function commande(){
             
         },
         error: function( result ) {
-            console.log(result);
-            noLoginAlert();
+            noLoginAlert(result.status);
         }
     })
 }
