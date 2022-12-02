@@ -440,3 +440,10 @@ body{
     --bs-btn-disabled-bg: #34393f;
     --bs-btn-disabled-border-color: #2e3339;
   }
+
+.menu-item{
+    display:flex;
+    height:5rem;
+    text-align: center;
+    justify-content: center;
+}
