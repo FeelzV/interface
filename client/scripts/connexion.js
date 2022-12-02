@@ -47,8 +47,11 @@ function connecter(courriel = null, mdp = null){
 function initialize()
 {
 
-    if(ID_CLIENT == 0){
-        document.getElementById("adminPage").hidden = false;
+    if(ID_CLIENT != 0){
+        document.getElementById("adminPage").style.visibility = "hidden";
+    }
+    else{
+        document.getElementById("adminPage").style.visibility = "visible";
     }
 
     if(ID_CLIENT == -1){
