@@ -697,12 +697,15 @@
     {
         "id": 32,
         "idClient": 1,
-        "montant": 173.32,
+
+        "montant": 2.35,
+
         "produits": [
             {
                 "id": 0,
                 "idProduit": 0,
                 "nomProduit": "Banane",
+
                 "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
                 "prix": 24.76,
                 "quantite": 1
@@ -736,6 +739,7 @@
                 "id": 1,
                 "idProduit": 0,
                 "nomProduit": "Banane",
+
                 "descriptionProduit": "miam",
                 "prix": 2.35,
                 "quantite": 1
@@ -743,5 +747,6 @@
         ],
         "status": "reçue",
         "date": "2022-12-02T04:29:20.496Z"
+
     }
 ]

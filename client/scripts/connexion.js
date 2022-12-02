@@ -33,9 +33,11 @@ function connecter(courriel = null, mdp = null){
             window.localStorage.setItem('tokenClient', TOKEN_CLIENT);
             window.location.href = "#/";
             document.getElementById("connexion").innerHTML = "Deconnexion";
+
             if(ID_CLIENT == 0){
                 document.getElementById("adminPage").style.visibility = "visible";
             }
+            updatepaniertooltip();
         },
         error: function(result){
             alert("Connexion invalide")
@@ -44,23 +46,31 @@ function connecter(courriel = null, mdp = null){
 }
 function initialize()
 {
+
     if(ID_CLIENT == 0){
         document.getElementById("adminPage").hidden = false;
     }
 
     if(ID_CLIENT == -1){
+
         document.getElementById("connexion").innerHTML = "Connexion";
     }
     else{
+        console.log("Decotext")
         document.getElementById("connexion").innerHTML = "Deconnexion";
     }
+    
 }
 
 function deconnection()
 {
+
     if(ID_CLIENT == 0){
         document.getElementById("adminPage").style.visibility = "hidden";
     }
+
+    console.log(window.localStorage.getItem('idClient'))
+
     if(ID_CLIENT  == -1)
     {
         window.location.href = "#/connexion";
@@ -68,12 +78,14 @@ function deconnection()
     else
     {
         document.getElementById("connexion").innerHTML = "Connexion";
+        window.location.href = "#/";
         ID_CLIENT = -1;
         TOKEN_CLIENT = null;
         window.localStorage.clear();
         window.localStorage.setItem('idClient', ID_CLIENT);
         window.localStorage.setItem('tokenClient', TOKEN_CLIENT);
     }
+    updatepaniertooltip();
 }
 
 /**

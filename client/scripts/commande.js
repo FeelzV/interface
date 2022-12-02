@@ -1,10 +1,10 @@
 function chargercommande(){
     $('#list_panier').text('');
     $.ajax({
-        url: "/clients/"+ID_CLIENT+"/panier",
+        url: "/clients/"+window.localStorage.getItem('idClient')+"/panier",
         method:"GET",
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            xhr.setRequestHeader('Authorization', "Basic "+ window.localStorage.getItem('tokenClient'));
         },
         success: function( result ){
             for(let i in result.items){
@@ -16,6 +16,9 @@ function chargercommande(){
             $('#livraison').text((result.valeur*0.1).toFixed(2));
             $('#taxes').text((result.valeur*0.15).toFixed(2));
             $('#total').text((result.valeur*1.25).toFixed(2));
+        },
+        error: function( result ) {
+            noLoginAlert(result.status);
         }
         });
 }
@@ -23,7 +26,7 @@ function chargercommande(){
 function commande_to_html(item){
     container = $('<div class="row cart_item_container"></div>');
     item_image_container = $('<div class="col centrer contain_height"></div>');
-    item_image=$(`<img class="panier_image">`).attr('src', "images/"+item.nomProduit+".png");
+    item_image=$(`<img class="panier_image">`).attr('src', "images/"+item.nomProduit+".jpg");
     item_image_container.append(item_image);
     item_desc_container = $('<div class="col centrer contain_height"></div>');
     item_desc_container.append(`<h5>${item.nomProduit}</h5>`);
@@ -45,15 +48,13 @@ function commande_to_html(item){
 }
 
 function commande(){
-    ID_CLIENT = 1
-    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
     $.ajax({
         url: "/ventes/",
         method:"POST",
-        data: JSON.stringify({idClient: ID_CLIENT}),
+        data: JSON.stringify({idClient: parseInt(window.localStorage.getItem('idClient'))}),
         contentType: "application/json",
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            xhr.setRequestHeader('Authorization', "Basic "+ window.localStorage.getItem('tokenClient'));
         },
         success: function( result ){
             console.log(result)
@@ -61,8 +62,8 @@ function commande(){
             window.location.href = "#/confirmation";
             
         },
-        error: function( result ){
-            console.log(result);
+        error: function( result ) {
+            noLoginAlert(result.status);
         }
     })
 }

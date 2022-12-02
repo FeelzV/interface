@@ -45,14 +45,17 @@ $(function () {
 
 function add_item(id_item){
     $.ajax({
-        url: "/clients/"+ID_CLIENT+"/panier",
+        url: "/clients/"+window.localStorage.getItem('idClient')+"/panier",
         method:"POST",
         data: {"idProduit": id_item, "quantite": 1},
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            xhr.setRequestHeader('Authorization', "Basic "+ window.localStorage.getItem('tokenClient'));
         },
         success: function( result ) {
             $('#item_counter').text(result.items.length)
+        },
+        error: function( result ) {
+            noLoginAlert(result.status);
         }
         });
 };
@@ -60,10 +63,10 @@ function add_item(id_item){
 function chargerpanier(){
     $('#list_panier').text('');
     $.ajax({
-        url: "/clients/"+ID_CLIENT+"/panier",
+        url: "/clients/"+window.localStorage.getItem('idClient')+"/panier",
         method:"GET",
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            xhr.setRequestHeader('Authorization', "Basic "+ window.localStorage.getItem('tokenClient'));
         },
         success: function( result ){
             for(let i in result.items){
@@ -79,8 +82,30 @@ function chargerpanier(){
             $('#livraison').text((result.valeur*0.1).toFixed(2));
             $('#taxes').text((result.valeur*0.15).toFixed(2));
             $('#total').text((result.valeur*1.25).toFixed(2));
+        },
+        error: function( result ) {
+            noLoginAlert(result.status);
         }
         });
+}
+
+function updatepaniertooltip(){
+    if( ID_CLIENT != null && TOKEN_CLIENT != null && ID_CLIENT != -1){
+        $.ajax({
+            url: "/clients/"+ID_CLIENT+"/panier",
+            method:"GET",
+            beforeSend: function (xhr){
+                xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            },
+            success: function( result ){
+                $('#item_counter').text(result.items.length)
+            }
+            });
+    }
+    else{
+        $('#item_counter').text(0)
+    }
+    
 }
 
 function panier_to_html(item){
@@ -124,31 +149,32 @@ function panier_to_html(item){
 
 
 function retirer_item(itemid){
-    ID_CLIENT = 1
-    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
     $.ajax({
-        url: "/clients/"+ID_CLIENT+"/panier/"+itemid,
+        url: "/clients/"+window.localStorage.getItem('idClient')+"/panier/"+itemid,
         method:"DELETE",
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            xhr.setRequestHeader('Authorization', "Basic "+ window.localStorage.getItem('tokenClient'));
         },
-        success: chargerpanier
+        success: chargerpanier,
+        error: function( result ) {
+            noLoginAlert(result.status);
+        }
     });
 }
 
 function update_qtt(itemid, qtt){
-    ID_CLIENT = 1
-    TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k"
-    
-    
     $.ajax({
-        url: "/clients/"+ID_CLIENT+"/panier/"+itemid,
+        url: "/clients/"+window.localStorage.getItem('idClient')+"/panier/"+itemid,
         method:"PUT",
         data: JSON.stringify({"quantite": qtt}),
         contentType: "application/json",
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            xhr.setRequestHeader('Authorization', "Basic "+ window.localStorage.getItem('tokenClient'));
         },
-        success: chargerpanier
+        success: chargerpanier,
+        error: function( result ) {
+            noLoginAlert(result.status);
+        }
     });
 }
+

@@ -19,21 +19,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style/main.css">
-    <script src="scripts/main.js"></script>
-    <script src="scripts/inscription.js"></script>
-    <script src="scripts/points_de_vente.js"></script>
-    <script src="scripts/navigation.js"></script>
-    <script src="scripts/produit.js"></script>
-    <script src="scripts/commande.js"></script>
-    <script src="scripts/confirmation.js"></script>
     <script src="scripts/connexion.js"></script>
+
     <script src="scripts/accueil.js"></script>
     <script src="scripts/pageProduit.js"></script>
     <script src="scripts/pageVente.js"></script>
     
     <link rel="stylesheet" href="style/accueil.css">
-
+    <link rel="stylesheet" href="style/main.css">
 </head>
 <body onload="initialize();">
 <header id="navigation">
@@ -41,8 +34,10 @@
         <div id="menu-principal">
             <div class="barre-menu" class="row">
 
-                <a href="#/" class="col-2"><img src="images/logoSVG.svg" alt="Logo de Pro-Gramme" style="width:inherit;height:inherit;"/></a>
-                <a id="connexion" onclick="deconnection()">Connexion</a>
+
+                    <a href="#/" class="col-2"><img src="images/logoSVG.svg" alt="Logo de Pro-Gramme" style="width:inherit;height:inherit;"/></a>
+                    <a id="connexion" class="col-2 menu-item" onclick="deconnection()">Connexion</a>
+
 
                 <a class="col-4"><input type="text" onchange="searchBar()" id="searchBar" class="form-control" /></a>
                 <a href="#/commande" class="col-2">Commandes</a>
@@ -65,23 +60,41 @@
                 
                 <!--<div class="deroulant"><button class="btn-deroulant">À propos</button>
 
-                    <div class="sous-menu">
-                        <a href="#/points_de_vente">Points de ventes</a>
-                        <a href="histoire.html">Notre histoire</a>
-                    </div>
-                </div>-->
-            </div>
-        </div>
-    </nav>
-</header>
-<div id="corps-principal">
 
-</div>
-<footer>
-    Pro-Gramme - Tous droits réservés
-</footer>
+                        <div class="sous-menu">
+                            <a href="#/points_de_vente">Points de ventes</a>
+                            <a href="histoire.html">Notre histoire</a>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="corps-principal">
+
+    </div>
+    <div id="noLoginAlert" class="alert alert-danger alert-fixed" role="alert" style="display:none">
+        Veuillez vous connecter pour accéder à cette fonctionnalité.
+    </div>
+    <footer>
+        Pro-Gramme - Tous droits réservés
+    </footer>
+    
 </body>
 
+
 <script src="scripts/admin.js"></script>
+
+<script src="scripts/connexion.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/inscription.js"></script>
+<script src="scripts/points_de_vente.js"></script>
+<script src="scripts/navigation.js"></script>
+<script src="scripts/produit.js"></script>
+<script src="scripts/commande.js"></script>
+<script src="scripts/confirmation.js"></script>
+<script src="scripts/accueil.js"></script>
+<script src="scripts/pageProduit.js"></script>
+<script src="scripts/afterLoad.js"></script>
 
 </html>

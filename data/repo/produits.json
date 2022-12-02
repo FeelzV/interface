@@ -5,7 +5,9 @@
         "nom": "Banane",
         "description": "miam",
         "prix": 2.35,
-        "qte_inventaire": 145,
+
+        "qte_inventaire": 151,
+
         "categorie": {
             "id": 1,
             "nom": "nourriture",
@@ -18,7 +20,9 @@
         "nom": "Barre protéinée",
         "description": "yum",
         "prix": 3.69,
-        "qte_inventaire": 40,
+
+        "qte_inventaire": 36,
+
         "categorie": {
             "id": 1,
             "nom": "nourriture",
@@ -31,7 +35,7 @@
         "nom": "concombre",
         "description": "vert",
         "prix": 2.23,
-        "qte_inventaire": 49,
+        "qte_inventaire": 48,
         "categorie": {
             "id": 1,
             "nom": "nourriture",
@@ -44,7 +48,7 @@
         "nom": "café",
         "description": "go fast",
         "prix": 6.69,
-        "qte_inventaire": 49,
+        "qte_inventaire": 48,
         "categorie": {
             "id": 2,
             "nom": "suppléments",
@@ -70,7 +74,7 @@
         "nom": "G-fuel",
         "description": "gaming fuel",
         "prix": 5.44,
-        "qte_inventaire": 50,
+        "qte_inventaire": 49,
         "categorie": {
             "id": 2,
             "nom": "suppléments",
@@ -83,7 +87,7 @@
         "nom": "Tank top",
         "description": "Black",
         "prix": 6.66,
-        "qte_inventaire": 49,
+        "qte_inventaire": 48,
         "categorie": {
             "id": 3,
             "nom": "vêtements",
