@@ -78,6 +78,7 @@ class GestionClient {
    * @param res
    */
   recupereClient(req, res) {
+    
     // S'il y a des éléments dans query, alors c'est une recherche
     if (Object.keys(req.query).length > 0) {
       const prenom = req.query.prenom;

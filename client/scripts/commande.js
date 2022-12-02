@@ -51,7 +51,7 @@ function commande(){
     $.ajax({
         url: "/ventes/",
         method:"POST",
-        data: JSON.stringify({idClient: window.localStorage.getItem('idClient')}),
+        data: JSON.stringify({idClient: parseInt(window.localStorage.getItem('idClient'))}),
         contentType: "application/json",
         beforeSend: function (xhr){
             xhr.setRequestHeader('Authorization', "Basic "+ window.localStorage.getItem('tokenClient'));
@@ -63,6 +63,7 @@ function commande(){
             
         },
         error: function( result ) {
+            console.log(result);
             noLoginAlert();
         }
     })

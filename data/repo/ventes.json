@@ -693,5 +693,22 @@
         ],
         "status": "reçue",
         "date": "2022-11-30T14:52:28.673Z"
+    },
+    {
+        "id": 32,
+        "idClient": 1,
+        "montant": 2.35,
+        "produits": [
+            {
+                "id": 0,
+                "idProduit": 0,
+                "nomProduit": "Banane",
+                "descriptionProduit": "miam",
+                "prix": 2.35,
+                "quantite": 1
+            }
+        ],
+        "status": "reçue",
+        "date": "2022-12-02T15:56:00.013Z"
     }
 ]
