@@ -35,7 +35,7 @@ function connecter(courriel = null, mdp = null){
             document.getElementById("connexion").innerHTML = "Deconnexion";
 
             if(ID_CLIENT == 0){
-                document.getElementById("adminPage").style.visibility = "visible";
+                document.getElementById("adminPage").style.display = "visible";
             }
             updatepaniertooltip();
         },
@@ -48,10 +48,10 @@ function initialize()
 {
 
     if(ID_CLIENT != 0){
-        document.getElementById("adminPage").style.visibility = "hidden";
+        document.getElementById("adminPage").style.display = "hidden";
     }
     else{
-        document.getElementById("adminPage").style.visibility = "visible";
+        document.getElementById("adminPage").style.display = "visible";
     }
 
     if(ID_CLIENT == -1){
@@ -69,7 +69,7 @@ function deconnection()
 {
 
     if(ID_CLIENT == 0){
-        document.getElementById("adminPage").style.visibility = "hidden";
+        document.getElementById("adminPage").style.display = "hidden";
     }
 
     console.log(window.localStorage.getItem('idClient'))
