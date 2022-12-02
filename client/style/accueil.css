@@ -28,6 +28,11 @@
     border: 2px solid rgb(0, 0, 0);
     padding: .5em;
 }
+
+.boxItemVente {
+    border: 2px solid rgb(0, 0, 0);
+    padding: .5em;
+}
   
 .statusjaune {
     background-color: rgb(240, 237, 52);  

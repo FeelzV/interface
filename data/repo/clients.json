@@ -751,5 +751,29 @@
             "items": []
         },
         "historique": []
+    },
+    {
+        "id": 6,
+        "prenom": "asdf",
+        "nom": "asdf",
+        "age": 3,
+        "adresse": "asdf",
+        "pays": "asdf",
+        "courriel": "adsf@hot.com",
+        "mdp": "$2b$08$ORB3JACS1xCNwCSawwkaqeG5z.Ar225.j4ZWcNzrvxsNXEvunnCJ2",
+        "panier": {
+            "valeur": 4.7,
+            "items": [
+                {
+                    "id": 0,
+                    "idProduit": 0,
+                    "nomProduit": "Banane",
+                    "descriptionProduit": "miam",
+                    "prix": 2.35,
+                    "quantite": 2
+                }
+            ]
+        },
+        "historique": []
     }
 ]

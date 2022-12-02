@@ -5,7 +5,7 @@
         "nom": "Banane",
         "description": "miam",
         "prix": 2.35,
-        "qte_inventaire": 149,
+        "qte_inventaire": 145,
         "categorie": {
             "id": 1,
             "nom": "nourriture",

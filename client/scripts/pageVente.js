@@ -20,13 +20,14 @@ function chargerpageVente(id){
 
      document.getElementById('titrepageVente').innerText = "Vente #"+item.id;
 
+      
       let itemRow = document.getElementById('descriptionpageVente');
 
-     item.produits.forEach(element => itemRow.append("<h5 class=\"card-text\">"+"Item #"+element.idProduit
-     +"\nNom du produit : "+element.nomProduit
-     +"\nPrix : "+element.prix
-     +"\nQuantite : "+element.quantite+"</h5>"
-     ));
+     item.produits.forEach(element => $('#descriptionpageVente').append("<div class=\"boxItemVente\"> <h5 class=\"card-text\">"+"Item #"+element.idProduit+"</h5>"
+     +"<h6 class=\"card-text\">"+"Nom du produit : "+element.nomProduit+"</h6>"
+     +"<h6 class=\"card-text\">"+"Prix : "+element.prix+"</h6>"
+     +"<h6 class=\"card-text\">"+"Quantite : "+element.quantite+"</h6></div>"));
+     
      
      let itemRow2 = document.getElementById('SuiteDescription').innerText = "Date : "+ item.date
      +"\nMontant total : "+ item.montant
