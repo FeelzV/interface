@@ -33,6 +33,9 @@ function connecter(courriel = null, mdp = null){
             window.localStorage.setItem('tokenClient', TOKEN_CLIENT);
             window.location.href = "#/";
             document.getElementById("connexion").innerHTML = "Deconnexion";
+            if(ID_CLIENT == 0){
+                document.getElementById("adminPage").style.visibility = "visible";
+            }
         },
         error: function(result){
             alert("Connexion invalide")
@@ -41,6 +44,10 @@ function connecter(courriel = null, mdp = null){
 }
 function initialize()
 {
+    if(ID_CLIENT == 0){
+        document.getElementById("adminPage").hidden = false;
+    }
+
     if(ID_CLIENT == -1){
         document.getElementById("connexion").innerHTML = "Connexion";
     }
@@ -51,6 +58,9 @@ function initialize()
 
 function deconnection()
 {
+    if(ID_CLIENT == 0){
+        document.getElementById("adminPage").style.visibility = "hidden";
+    }
     if(ID_CLIENT  == -1)
     {
         window.location.href = "#/connexion";

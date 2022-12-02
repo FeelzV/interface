@@ -1,23 +1,25 @@
 <section id="sectionFiltre" style="float:left;width:20%;">
     <h1>Filtres</h1>
-      <div>
-        <h3>Prix</h3>
-        <div>
-          <label for="accueilFiltreMin" class="form-label">Minimum</label>
-          <input type="text" class="form-control" id="accueilFiltreMin">
-        </div>
-        <div>
-          <label class="form-label" for="accueilFiltreMax">Maximum</label>
-          <input type="text" id="accueilFiltreMax" class="form-control">
-        </div>
-      </div>
-      <div>
-        <h3>Catégorie</h3>
-        <ul id="listeCategorie"><!--Est rempli par JS-->
+    <h3>Clients</h3>
+    <div>
+      <label for="idduclient" class="form-label">Id du Client</label>
+      <input type="text" class="form-control" id="idduclient"/>
+    </div>
+        <h3>États</h3>
+        <ul id="listeetats"><!--Est rempli par JS-->
           <li>
-            <input id="radioCategorie" type="radio" name="categorie" value="" class="form-check-input" checked="">
-            <label for="radioCategorie" class="form-check-label">Toute catégories</label>
-          </li>
+            <input id="radioetats" type="radio" name="etats" value="" class="form-check-input" checked="">
+            <label for="radioetats" class="form-check-label">Tous les états</label></li>
+
+            <li><input id="radioetats" type="radio" name="etats" value="annule" class="form-check-input" checked="">
+            <label for="radioetats" class="form-check-label">Annulé</label></li>
+
+            <li><input id="radioetats" type="radio" name="etats" value="prepare" class="form-check-input" checked="">
+            <label for="radioetats" class="form-check-label">Prepare</label></li>
+
+            <li><input id="radioetats" type="radio" name="etats" value="reçue" class="form-check-input" checked="">
+            <label for="radioetats" class="form-check-label">Reçus</label></li>
+          
         </ul>
       </div>
       <button type="button" class="btn btn-primary" onclick="filtrerAdmin()">Filtrer</button>

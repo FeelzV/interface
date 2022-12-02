@@ -4,6 +4,4 @@ function clicMenuGauche(lien){
 }
 
 var ID_CLIENT = window.localStorage.getItem('idClient');
-var TOKEN_CLIENT = window.localStorage.setItem('tokenClient', TOKEN_CLIENT);
-
-initialize();
+var TOKEN_CLIENT = window.localStorage.getItem('tokenClient');

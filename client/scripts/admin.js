@@ -2,6 +2,9 @@ function chargeradmin(){
     $('#sectionProduits').text("");
     $.ajax({
     url: "/ventes",
+    beforeSend: function (xhr){
+        xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+    },
     success: function( result ) {
         $.each(result, function(key,value){
             item = itemToCardAdmin(value)
@@ -13,7 +16,7 @@ function chargeradmin(){
 
 function itemToCardAdmin(item){
 
-    let itemContaine = $("<div></div>").addClass("card mb-3 cardAccueil col-lg-4 col-md-6 col-sm-12");
+    let itemContaine = $("<a href=\"/#/pageVente/"+item.id+"\"></a>").addClass("card mb-3 cardAccueil col-lg-4 col-md-6 col-sm-12");
     let itemRow = $("<div></div>").addClass("row g-0")
             .append("<h5 class=\"card-text\">"+"Vente #"+item.id+"</h5>"+
             "<h5 class=\"card-text\">"+"Id du client : "+item.idClient+"</h5>"+
@@ -38,28 +41,28 @@ function itemToCardAdmin(item){
 function filtrerAdmin(){
     $('#sectionProduits').text("");
     let data = {};//Faire un objet data dynamiquement
-    let minimum = $("#accueilFiltreMin").val();
-    if(minimum){
-        data.minimum = parseInt(minimum);
+    let status = $('input:radio[name=etats]:checked').val();
+    
+    if(status){
+        data.status = status;
     }
-    let maximum = $("#accueilFiltreMax").val();
-    if(maximum){
-        data.maximum = parseInt(maximum);
-    }
-    let categorie = $('input:radio[name=categorie]:checked').val();
-    if(categorie){
-        data.categorie = parseInt(categorie);
+    let idClient = $("#idduclient").val();
+    if(idClient){
+        data.client = idClient;
     }
     let nom = $('#searchBar').val();
     if(nom){
         data.nom = nom;
     }
     $.ajax({
-    url: "/produits",
+    url: "/ventes",
     data:data,
+    beforeSend: function (xhr){
+        xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+    },
     success: function( result ) {
         $.each(result, function(key,value){
-            item = itemToCard(value)
+            item = itemToCardAdmin(value)
             $('#sectionProduits').append(item)
         })
     },

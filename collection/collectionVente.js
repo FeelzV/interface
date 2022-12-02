@@ -91,6 +91,37 @@ class CollectionVente {
     return listeLocale;
   }
 
+  rechercheVentes(idClient, status, depuis, minimum, maximum) {
+    let listeLocale = [...this.liste_vente];
+    if (idClient >= 0) {
+      listeLocale = listeLocale.filter(function (elem) {
+        return elem.idClient === idClient;
+      });
+    }
+    if (status) {
+      listeLocale = listeLocale.filter(function (elem) {
+        return elem.status === status;
+      });
+    }
+    if (depuis) {
+      listeLocale = listeLocale.filter(function (elem) {
+        return elem.date > depuis;
+      });
+    }
+    if(minimum){
+      listeLocale = listeLocale.filter(function(elem){
+        return elem.prix >= minimum;
+      });
+    }
+    if(maximum){
+      listeLocale = listeLocale.filter(function(elem){
+        return elem.prix <= maximum;
+      });
+    }
+
+    return listeLocale;
+  }
+
   /**
    * Fonction interne. Sauvegarde les fichiers sur le disque
    * @param fichier Optionnel chemin vers un fichier de sauvegarde

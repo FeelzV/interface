@@ -48,5 +48,9 @@ router.get('/pageProduit/:idProduit', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/pageProduit.html'));
     });
 
+router.get('/pageVente/:idVente', function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/pageVente.html'));
+    });
+
 
 module.exports = router
