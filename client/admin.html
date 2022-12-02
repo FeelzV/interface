@@ -1,0 +1,32 @@
+<section id="sectionFiltre" style="float:left;width:20%;">
+    <h1>Filtres</h1>
+    <h3>Clients</h3>
+    <div>
+      <label for="idduclient" class="form-label">Id du Client</label>
+      <input type="text" class="form-control" id="idduclient"/>
+    </div>
+        <h3>États</h3>
+        <ul id="listeetats"><!--Est rempli par JS-->
+          <li>
+            <input id="radioetats" type="radio" name="etats" value="" class="form-check-input" checked="">
+            <label for="radioetats" class="form-check-label">Tous les états</label></li>
+
+            <li><input id="radioetats" type="radio" name="etats" value="annule" class="form-check-input" checked="">
+            <label for="radioetats" class="form-check-label">Annulé</label></li>
+
+            <li><input id="radioetats" type="radio" name="etats" value="prepare" class="form-check-input" checked="">
+            <label for="radioetats" class="form-check-label">Prepare</label></li>
+
+            <li><input id="radioetats" type="radio" name="etats" value="reçue" class="form-check-input" checked="">
+            <label for="radioetats" class="form-check-label">Reçus</label></li>
+          
+        </ul>
+      </div>
+      <button type="button" class="btn btn-primary" onclick="filtrerAdmin()">Filtrer</button>
+  </section>
+
+
+</section>
+<section id="sectionProduits" style="float:right;width:80%;" class="row"><!--Est rempli par JS-->
+    
+</section>

@@ -14,6 +14,6 @@ function noLoginAlert(status){
     setTimeout(() => {document.getElementById("noLoginAlert").style = "display:none";},4000);
 }
 var ID_CLIENT = window.localStorage.getItem('idClient');
+
 var TOKEN_CLIENT = window.localStorage.getItem('tokenClient');
 
-initialize();

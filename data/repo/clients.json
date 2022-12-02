@@ -9,6 +9,7 @@
         "courriel": "felix@c.com",
         "mdp": "$2b$08$M2UAeP6NtN4ThzgPOp2OceNHzFOB2F8oW/yLpw7Mb1AoQX.1sAfW2",
         "panier": {
+
             "valeur": 3.69,
             "items": [
                 {
@@ -37,6 +38,7 @@
                     }
                 ],
                 "status": "reçue",
+
                 "date": "2022-12-02T15:56:00.013Z"
             }
         ]

@@ -697,18 +697,56 @@
     {
         "id": 32,
         "idClient": 1,
+
         "montant": 2.35,
+
         "produits": [
             {
                 "id": 0,
                 "idProduit": 0,
                 "nomProduit": "Banane",
+
+                "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                "prix": 24.76,
+                "quantite": 1
+            },
+            {
+                "id": 1,
+                "idProduit": 1,
+                "nomProduit": "Tomate",
+                "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                "prix": 24.76,
+                "quantite": 6
+            }
+        ],
+        "status": "reçue",
+        "date": "2022-12-02T04:27:40.576Z"
+    },
+    {
+        "id": 33,
+        "idClient": 1,
+        "montant": 8,
+        "produits": [
+            {
+                "id": 0,
+                "idProduit": 4,
+                "nomProduit": "Monster",
+                "descriptionProduit": "i am speed",
+                "prix": 4.44,
+                "quantite": 1
+            },
+            {
+                "id": 1,
+                "idProduit": 0,
+                "nomProduit": "Banane",
+
                 "descriptionProduit": "miam",
                 "prix": 2.35,
                 "quantite": 1
             }
         ],
         "status": "reçue",
-        "date": "2022-12-02T15:56:00.013Z"
+        "date": "2022-12-02T04:29:20.496Z"
+
     }
 ]
